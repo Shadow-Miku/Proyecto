@@ -13,7 +13,7 @@ class validadorPedidos extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class validadorPedidos extends FormRequest
     public function rules()
     {
         return [
-            //
+            'txttipo'=>'required',
+            'txtarticulo'=>'required',
+            'txtCantidad'=>'numeric|required|max:50',
+            'txtEmail'=>'required',
+            'txtDireccion'=>'required'
         ];
     }
 }
