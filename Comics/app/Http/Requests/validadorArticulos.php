@@ -24,7 +24,13 @@ class validadorArticulos extends FormRequest
     public function rules()
     {
         return [
-            //
+            'tipo'=>'required',
+            'marca'=>'required',
+            'descripcion'=>'required',
+            'cantidadArticulos'=>'numeric|required',
+            'precioCompraAr'=>'numeric|required',
+            'precioVentaAr'=>'numeric|required',
+            'fechaIngresoAr'=>'required'
         ];
     }
 }
