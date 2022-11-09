@@ -96,5 +96,71 @@
             </div>
         </div>
     </div>
-    
+    <div class="card-body col-md-11">
+        <table class="table table-secondary mb-10">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Edición</th>
+                    <th scope="col">Compañia</th>
+                    <th scope="col">Cantidad de comics</th>
+                    <th scope="col">Precio Compra Comic</th>
+                    <th scope="col">Precio Venta Comic</th>
+                    <th scope="col">Fecha Ingreso</th>
+                </tr>
+            </thead>
+                
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                </tr>
+                <tr class="table-light">
+                    <th scope="row">2</th>
+                        <td>#</td>
+                        <td>#</td>
+                        <td>#</td>
+                        <td>#</td>
+                        <td>#</td>
+                        <td>#</td>
+                    </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                </tr>
+                <tr class="table-light">
+                    <th scope="row">4</th>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col">
+        <a href="RegistroComic">
+            <button>Cancelar</button>
+        </a>
+    </div>
+
+    <div class="col">
+        <a href="RegistroComic">
+            <button>Actualizar Comics</button>
+        </a>
+    </div>
+    </div> 
 @stop
