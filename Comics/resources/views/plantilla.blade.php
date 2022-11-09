@@ -212,7 +212,7 @@
                               <a href=" {{ route('apRegiCom') }} " class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Registrar Comics</span> </a>
                           </li>
                           <li>
-                            <a href=" {{ route('apProvee') }} " class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Registrar Proveedores</span> </a>
+                            <a href="Proveedores" class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Registrar Proveedores</span> </a>
                         </li>
                       </ul>
                   </li>
