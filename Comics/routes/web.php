@@ -28,3 +28,4 @@ Route::post('CargarRegistroComic', [controladorVistas::class,'procesarRegistroCo
 Route::post('CargarRegistroArticulo', [controladorVistas::class,'procesarRegistroArticulo'])->name('CarRegArt');
 Route::post('CargarRegistroProveedor', [controladorVistas::class,'procesarRegistroProveedor'])->name('CarRegPro');
 Route::post('CargarRegistroPedido', [controladorVistas::class,'procesarRegistroPedido'])->name('CarRegPed');
+Route::post('consultarArtVenta',[controladorVistas::class,'procesarRegistroVentas']);
