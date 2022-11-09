@@ -24,7 +24,13 @@ class validadorComics extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nombre'=>'required',
+            'edicion'=>'required',
+            'compañia'=>'required',
+            'cantidadComics'=>'numeric|required',
+            'precioCompraCm'=>'numeric|required',
+            'precioVentaCm'=>'numeric|required',
+            'fechaIngresoCm'=>'required'
         ];
     }
 }
