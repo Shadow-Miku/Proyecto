@@ -35,7 +35,7 @@ class controladorVistas extends Controller
         return redirect('Ventas')->with('confirmacion','Registro de Ventas');
     }
     
-    public function procesarRegistroStock(validadorPedidos $req){
+    public function procesarRegistroStock(validadorStock $req){
         return redirect('Stock')->with('confirmacion','Busqueda de stock');
     }
 

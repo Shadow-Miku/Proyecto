@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class validadorStock extends FormRequest
+class validadorArticulos extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class validadorStock extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return True;
     }
 
     /**
@@ -24,7 +24,13 @@ class validadorStock extends FormRequest
     public function rules()
     {
         return [
-            'stock'=>'required'
+            'tipo'=>'required',
+            'marca'=>'required',
+            'descripcion'=>'required',
+            'cantidadArticulos'=>'numeric|required',
+            'precioCompraAr'=>'numeric|required',
+            'precioVentaAr'=>'numeric|required',
+            'fechaIngresoAr'=>'required'
         ];
     }
 }
