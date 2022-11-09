@@ -29,3 +29,4 @@ Route::post('CargarRegistroArticulo', [controladorVistas::class,'procesarRegistr
 Route::post('CargarRegistroProveedor', [controladorVistas::class,'procesarRegistroProveedor'])->name('CarRegPro');
 Route::post('CargarRegistroPedido', [controladorVistas::class,'procesarRegistroPedido'])->name('CarRegPed');
 Route::post('consultarArtVenta',[controladorVistas::class,'procesarRegistroVentas']);
+Route::post('searchStock',[controladorVistas::class,'procesarRegistroStock']);
