@@ -2,7 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controladorVistas;
-
+use App\Http\Controllers\controladorbdPedidos;
+use App\Http\Controllers\controladorbdComics;
+use App\Http\Controllers\controladorbdProveedores;
+use App\Http\Controllers\controladorbdStock;
+use App\Http\Controllers\controladorbdArticulos;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
