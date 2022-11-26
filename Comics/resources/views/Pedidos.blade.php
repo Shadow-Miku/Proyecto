@@ -80,46 +80,5 @@
             </div>
         </div>
     </div>
-    <table class="table table-borderless table-striped table-hover">
-        <thead class="table-dark">
-            <tr>
-            <th scope="col">Proveedor</th>
-            <th scope="col">Articulos</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Existencia</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <th scope="row">Krunchy-Krunchy</th>
-            <td>Figura de accion</td>
-            <td>$60</td>
-            <td>15</td>
-            </tr>
-            <tr>
-            <th scope="row">Weekly</th>
-            <td>Comic Spiderman 1ra edicion</td>
-            <td>$600</td>
-            <td>3</td>
-            </tr>
-            <tr>
-            <th scope="row">Pethungry</th>
-            <td>Figura de accion Batman</td>
-            <td>$280</td>
-            <td>25</td>
-            </tr>
-            <tr>
-            <th scope="row">Narnia</th>
-            <td>Comic WonderWoman edicion #31</td>
-            <td>$120</td>
-            <td>60</td>
-            </tr>
-            <tr>
-            <th scope="row">UpFront</th>
-            <td>Comic Superman Edicion #25</td>
-            <td>$220</td>
-            <td>90</td>
-            </tr>
-        </tbody>
-    </table>
+    
 @stop
