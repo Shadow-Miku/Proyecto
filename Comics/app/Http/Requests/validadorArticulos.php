@@ -30,6 +30,7 @@ class validadorArticulos extends FormRequest
             'cantidadArticulos'=>'numeric|required',
             'precioCompraAr'=>'numeric|required',
             'precioVentaAr'=>'numeric|required',
+            'txtProveedor'=>'required',
             'fechaIngresoAr'=>'required'
         ];
     }

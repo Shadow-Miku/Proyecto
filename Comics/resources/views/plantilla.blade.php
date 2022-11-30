@@ -205,56 +205,31 @@
                       <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                           <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Registrar</span> </a>
                           <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                          <li>
+                            <a href="Proveedores" class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Registrar Proveedores</span> </a>
+                          </li>
                           <li class="w-100">
                               <a href=" {{ route('apRegiArt') }} " class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Registrar Articulos</span> </a>
                           </li>
                           <li>
                               <a href=" {{ route('apRegiCom') }} " class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Registrar Comics</span> </a>
                           </li>
-                          <li>
-                            <a href="Proveedores" class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Registrar Proveedores</span> </a>
-                        </li>
                       </ul>
                   </li>
+
                   <!--enlace pedidos-->
                   <li>
                       <a href=" {{ route('apPedid') }} " class="nav-link px-0 align-middle">
                           <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Pedidos</span></a>
                   </li>
-             <!-- <li>
-                      <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                          <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
-                      <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                          <li class="w-100">
-                              <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
-                          </li>
-                          <li>
-                              <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
-                          </li>
-                      </ul>
-                  </li>
-                  <li>
-                      <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                          <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
-                          <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                          <li class="w-100">
-                              <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
-                          </li>
-                          <li>
-                              <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
-                          </li>
-                          <li>
-                              <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
-                          </li>
-                          <li>
-                              <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
-                          </li>
-                      </ul>
-                  </li> -->
+
+                  <!--enlace stock-->
                   <li>
                       <a href=" {{ route('apStock') }} " class="nav-link px-0 align-middle">
                           <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Stock</span> </a>
                   </li>
+
+                  <!--enlace ventas-->
                   <li>
                     <a href=" {{ route('apVentas') }} " class="nav-link px-0 align-middle">
                         <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Ventas</span> </a>
@@ -273,11 +248,6 @@
                           <li>
                             <a href="Proveedores" class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Consultas Proveedores</span> </a>
                         </li>
-                        <li>
-                            <a href="Proveedores" class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Consultas Pedidos</span> </a>
-                        </li>
-                        <li>
-                            <a href="Proveedores" class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Consultas Stock</span> </a>
                         </li>
                       </ul>
                   </li>
