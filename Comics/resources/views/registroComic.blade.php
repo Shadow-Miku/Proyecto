@@ -64,7 +64,7 @@
 
                     <div class="mb-3">
                         <label class="form-label">Cantidad de Comics</label>
-                        <input type="numeric" class="form-control" name="cantidadComics" value="{{old('cantidadComics')}}">
+                        <input type="number" min="0" class="form-control" name="cantidadComics" value="{{old('cantidadComics')}}">
                         <p class="text-primary fst-italic"> <!--{{ $errors->first('cantidadComics') }}--> </p>
                     </div>
 
@@ -79,6 +79,16 @@
                         <input type="numeric" class="form-control" name="precioVentaCm" value="{{old('precioVentaCm')}}">
                         <p class="text-primary fst-italic"> {{ $errors->first('precioVentaCm') }} </p>
                     </div>
+
+                    <div class="mb-3">
+                        <label for="text" class="form-label">Proveedor </label>
+                            <select class="form-select" name="txtProveedor" aria-label="Default select example">
+                                <option selected> Selecciona un proveedor...</option>
+    
+                            </select>
+                        <p class="text-primary fst-italic" style="color: aqua"> 
+                            {{ $errors->first('txtProveedor') }} </p>
+                        </div>
 
                     <div class="mb-3">
                         <label class="form-label">Fecha ingreso</label>

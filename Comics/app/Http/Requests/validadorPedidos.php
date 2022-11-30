@@ -24,7 +24,7 @@ class validadorPedidos extends FormRequest
     public function rules()
     {
         return [
-            'txttipo'=>'required',
+            'txtproveedor'=>'required',
             'txtarticulo'=>'required',
             'txtCantidad'=>'numeric|required|max:50',
             'txtEmail'=>'required',

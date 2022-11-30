@@ -64,7 +64,7 @@
 
                     <div class="mb-3">
                         <label class="form-label">Cantidad de Articulos</label>
-                        <input type="numeric" class="form-control" name="cantidadArticulos" value="{{old('cantidadArticulos')}}">
+                        <input type="number" min="0" class="form-control" name="cantidadArticulos" value="{{old('cantidadArticulos')}}">
                         <p class="text-primary fst-italic"> {{ $errors->first('cantidadArticulos') }} </p>
                     </div>
 
@@ -78,6 +78,16 @@
                         <label class="form-label">Precio venta</label>
                         <input type="numeric" class="form-control" name="precioVentaAr" value="{{old('precioVentaAr')}}">
                         <p class="text-primary fst-italic"> {{ $errors->first('precioVentaAr') }} </p>
+                    </div>
+
+                    <div class="mb-3">
+                    <label for="text" class="form-label">Proveedor </label>
+                        <select class="form-select" name="txtProveedor" aria-label="Default select example">
+                            <option selected> Selecciona un proveedor...</option>
+
+                        </select>
+                    <p class="text-primary fst-italic" style="color: aqua"> 
+                        {{ $errors->first('txtProveedor') }} </p>
                     </div>
 
                     <div class="mb-3">
