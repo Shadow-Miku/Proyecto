@@ -13,17 +13,6 @@
     <div class="container mt-5 col-md-6">
 
         <h1 class="display-2 text-center mb-5"> Proveedores </h1>
-
-        
-        <!--Errores arriba del formulario
-            @if ($errors->any())
-            @foreach ( $errors->all() as $error )
-                <div class="alert alert-warning alert-disimissible fade show" role="alert">
-                <strong> {{ $error }} </strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> </button></div>
-            @endforeach
-      
-        @endif-->
             
 
         <div class="card mb-5">
@@ -34,15 +23,9 @@
 
             <div class="card-body">
 
-                <form class="m-4" method="POST" action="CargarRegistroProveedores">
+                <form class="m-4" method="POST" action="{{route('proveedor.store')}}">
                     @csrf
                     <!--Errores individuales y guardar los datos escritos-->
-                    
-                    <div class="mb-3">
-                        <label class="form-label" hidden>id de Proveedor en la base de datos</label>
-                        <input type="number" class="form-control"  name="id"  hidden>
-                        <p class="text-primary fst-italic"></p>
-                    </div>
 
                     <div class="mb-3">
                         <label class="form-label">Empresa</label>

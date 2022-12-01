@@ -246,7 +246,7 @@
                               <a href=" {{ route('apRegiCom') }} " class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Consultas Comics</span> </a>
                           </li>
                           <li>
-                            <a href="Proveedores" class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Consultas Proveedores</span> </a>
+                            <a href="{{ route('proveedor.index') }}" class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Consultas Proveedores</span> </a>
                         </li>
                         </li>
                       </ul>

@@ -71,5 +71,9 @@ class controladorVistas extends Controller
     public function showVentas(){
         return view('Ventas');
     } 
+
+    public function showConProveedores(){
+        return view('conProveedores');
+    } 
  
 }
