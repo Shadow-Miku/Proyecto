@@ -213,7 +213,7 @@
                               <a href=" {{ route('apRegiArt') }} " class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Registrar Articulos</span> </a>
                           </li>
                           <li>
-                              <a href=" {{ route('apRegiCom') }} " class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Registrar Comics</span> </a>
+                              <a href=" {{ route('comic.create') }} " class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Registrar Comics</span> </a>
                           </li>
                       </ul>
                   </li>
@@ -244,7 +244,7 @@
                               <a href=" {{ route('apRegiArt') }} " class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Consultas Articulos</span> </a>
                           </li>
                           <li>
-                              <a href=" {{ route('apRegiCom') }} " class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Consultas Comics</span> </a>
+                              <a href=" {{ route('comic.index') }} " class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Consultas Comics</span> </a>
                           </li>
                           <li>
                             <a href="{{ route('proveedor.index') }}" class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Consultas Proveedores</span> </a>

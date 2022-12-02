@@ -13,19 +13,7 @@
     <div class="container mt-5 col-md-6">
 
         <h1 class="display-2 text-center mb-5"> Comics </h1>
-
-        
-        <!--Errores arriba del formulario
-            @if ($errors->any())
-            @foreach ( $errors->all() as $error )
-                <div class="alert alert-warning alert-disimissible fade show" role="alert">
-                <strong> {{ $error }} </strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> </button></div>
-            @endforeach
-      
-        @endif-->
             
-
         <div class="card mb-5">
 
             <div class="card-header fw-bold">
@@ -34,7 +22,7 @@
 
             <div class="card-body">
 
-                <form class="m-4" method="POST" action="CargarRegistroComic">
+                <form class="m-4" method="POST" action="{{route('comic.store')}}">
                     @csrf
                     <!--Errores individuales y guardar los datos escritos-->
                     
@@ -58,8 +46,8 @@
 
                     <div class="mb-3">
                         <label class="form-label">Compañia</label>
-                        <input type="text" class="form-control" name="compañia" value="{{old('compañia')}}">
-                        <p class="text-primary fst-italic"> {{ $errors->first('compañia') }} </p>
+                        <input type="text" class="form-control" name="compania" value="{{old('compania')}}">
+                        <p class="text-primary fst-italic"> {{ $errors->first('compania') }} </p>
                     </div>
 
                     <div class="mb-3">
@@ -70,21 +58,34 @@
 
                     <div class="mb-3">
                         <label class="form-label">Precio compra Comic</label>
-                        <input type="numeric" class="form-control" name="precioCompraCm" value="{{old('precioCompraCm')}}">
+                        <input type="numeric" class="form-control" name="precioCompraCm" id="compra" value="{{old('precioCompraCm')}}" step="0.001" oninput="calcular()">
                         <p class="text-primary fst-italic"> {{ $errors->first('precioCompraCm') }} </p>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Precio venta</label>
-                        <input type="numeric" class="form-control" name="precioVentaCm" value="{{old('precioVentaCm')}}">
+                        <input type="numeric" class="form-control" name="precioVentaCm" id="venta" value="{{old('PrecioVentaCm')}}" step="0.001">
                         <p class="text-primary fst-italic"> {{ $errors->first('precioVentaCm') }} </p>
                     </div>
+
+                    <script type="text/javascript"> 
+                        function calcular(){
+                            try{
+                                var a= paseFloat(document.getElementById("compra").value)||0;
+
+                                document.getElementById("venta").value = a * 1.40;
+                            }catch (e){}
+                        }
+                    </script>
+
 
                     <div class="mb-3">
                         <label for="text" class="form-label">Proveedor </label>
                             <select class="form-select" name="txtProveedor" aria-label="Default select example">
                                 <option selected> Selecciona un proveedor...</option>
-    
+                                @foreach ($proveedor as $tb_proveedores)
+                                    <option value="{{$tb_proveedores['idProveedor']}}">{{$tb_proveedores['empresa']}}</option>
+                                @endforeach
                             </select>
                         <p class="text-primary fst-italic" style="color: aqua"> 
                             {{ $errors->first('txtProveedor') }} </p>

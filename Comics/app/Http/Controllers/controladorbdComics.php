@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\validadorComics;
 use Illuminate\Http\Request;
+use DB;
+use Carbon\Carbon;
+use App\Models\tb_proveedores;
 
 class controladorbdComics extends Controller
 {
@@ -13,7 +17,8 @@ class controladorbdComics extends Controller
      */
     public function index()
     {
-        //
+        $ConsultaC= DB::table('tb_proveedores')->get();
+        return view('conProveedores',compact('ConsultaC'));
     }
 
     /**
@@ -23,7 +28,8 @@ class controladorbdComics extends Controller
      */
     public function create()
     {
-        //
+        $proveedor = tb_proveedores::all();
+        return view('RegistroComic',compact('proveedor'));
     }
 
     /**
@@ -32,9 +38,21 @@ class controladorbdComics extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(validadorComics $request)
     {
-        //
+        DB::table('tb_comics')->insert([
+            "nombre"=> $request->input('nombre'),
+            "edicion"=> $request->input('edicion'),
+            "compania"=> $request->input('compania'),
+            "cantidadComics"=> $request->input('cantidadComics'),
+            "precioCompraCo"=> $request->input('precioCompraCm'),
+            "precioVentaCo"=> $request->input('precioVentaCm'),
+            "proveedor_Id"=> $request->input('txtProveedor'),
+            "fechaIngreso"=> $request->input('fechaIngresoCm'),
+            "created_at"=> Carbon::now(),
+            "updated_at"=> Carbon::now()
+        ]);
+        return redirect('comic/create')->with('confirmacion','abc');
     }
 
     /**
@@ -45,7 +63,9 @@ class controladorbdComics extends Controller
      */
     public function show($id)
     {
-        //
+        $consultaId= DB::table('tb_comics')->where('idComic',$id)->first();
+
+        return view('modalEliminarComic', compact('consultaId'));
     }
 
     /**
@@ -56,7 +76,9 @@ class controladorbdComics extends Controller
      */
     public function edit($id)
     {
-        //
+        $consultaId= DB::table('tb_comics')->where('idComic',$id)->first();
+        $proveedores = tb_proveedores::all();
+        return view('modalActualizarComic', compact('consultaId'),compact('proveedores'));
     }
 
     /**
@@ -66,9 +88,21 @@ class controladorbdComics extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(validadorComics $request, $id)
     {
-        //
+        DB::table('tb_comics')->where('idComic',$id)->update([
+            "nombre"=> $request->input('nombre'),
+            "edicion"=> $request->input('edicion'),
+            "compania"=> $request->input('compania'),
+            "cantidadComics"=> $request->input('cantidadComics'),
+            "precioCompraCo"=> $request->input('precioCompraCm'),
+            "precioVentaCo"=> $request->input('precioVentaCm'),
+            "proveedor_Id"=> $request->input('txtProveedor'),
+            "fechaIngreso"=> $request->input('fechaIngresoCm'),
+            "updated_at"=> Carbon::now()
+        ]);
+
+        return redirect('proveedor')->with('actualizar','abc');
     }
 
     /**
@@ -79,6 +113,8 @@ class controladorbdComics extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('tb_comics')->where('idComic',$id)->delete();
+
+        return redirect('proveedor')->with('elimina','abc');
     }
 }
