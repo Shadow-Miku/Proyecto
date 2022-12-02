@@ -1,33 +1,18 @@
-@extends('plantilla')
+<!-- Modal -->
+<div class="modal fade" id="modalInsertarProveedor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalInsertarProveedor" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
 
-@section('contenido')
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Agregar Recuerdo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
 
-    @if (session()->has('confirmacion'))
-        {!!" <script> Swal.fire(
-            'Muy bien!',
-            'Proveedor registrado',
-            'success'
-          ) </script>"!!}        
-    @endif
-
-    <div class="container mt-5 col-md-6">
-
-        <h1 class="display-2 text-center mb-5"> Proveedores </h1>
-            
-
-        <div class="card mb-5">
-
-            <div class="card-header fw-bold">
-                Registro de Proveedores
-            </div>
-
-            <div class="card-body">
-
-                <form class="m-4" method="POST" action="{{route('proveedor.store')}}">
-                    @csrf
-                    <!--Errores individuales y guardar los datos escritos-->
-
-                    <div class="mb-3">
+        <div class="modal-body">
+          <form class="m-4" method="POST" action="{{route('proveedor.store')}}">
+            @csrf
+            <!--Errores individuales y guardar los datos escritos-->
+            <div class="mb-3">
                         <label class="form-label">Empresa</label>
                         <input type="text" class="form-control"  name="empresa" value="{{old('empresa')}}">
                         <p class="text-primary fst-italic"> {{ $errors->first('empresa') }} </p>
@@ -38,23 +23,6 @@
                         <input type="text" class="form-control"  name="direccion" value="{{old('direccion')}}">
                         <p class="text-primary fst-italic"> {{ $errors->first('direccion') }}</p>
                     </div>
-<!--
-                    <div class="mb-3">
-                    
-                        <label class="form-label" for="drawpais">País</label>
-                        <input list="drawpais" multiple id="pais" list="drawpais" size="64" class="form-control" name="pais" value="{{old('pais')}}"/>
-                        <p class="text-primary fst-italic"> {{ $errors->first('pais') }} </p>
-                        <datalist id="drawpais">
-                            <option value="México">Mex</option>
-                            <option value="Estados Unidos">EUA</option>
-                            <option value="Canadá">Can</option>
-                            <option value="España">Spain</option>
-                            <option value="Reino Unido">UK</option>
-                            <option value="Japón">Jap</option>
-                            <option value="Brasil">Bra</option>
-                          </datalist>
-                       
-                    </div>-->
 
                     <div class="mb-3">
                         <label for="text" class="form-label">País</label>
@@ -71,9 +39,6 @@
                     <p class="text-primary fst-italic" style="color: aqua"> 
                         {{ $errors->first('pais') }} </p>
                     </div>
-                    
-
-                    
 
                     <div class="mb-3">
                         <label class="form-label">Contacto</label>
@@ -99,16 +64,16 @@
                         <p class="text-primary fst-italic"> {{ $errors->first('correo') }} </p>
                     </div>
 
-
             </div>
 
             <div class="card-footer">
 
-                <button type="submit" class="btn btn-success m-1"> Registrar Proveedor </button>
-            
-            </form>
-
-            </div>
-        </div>
-    </div> 
-@stop
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">nel prro</button>
+            <button type="submit" class="btn btn-primary">jimon dice</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

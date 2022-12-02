@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controladorVistas;
 use App\Http\Controllers\controladorbdPedidos;
 use App\Http\Controllers\controladorbdComics;
-use App\Http\Controllers\controladorbdProveedores;
+use App\Http\Controllers\controladorbdProveedor;
 use App\Http\Controllers\controladorbdStock;
 use App\Http\Controllers\controladorbdArticulos;
 /*
@@ -34,3 +34,31 @@ Route::post('CargarRegistroProveedores', [controladorVistas::class,'procesarRegi
 Route::post('CargarRegistroPedido', [controladorVistas::class,'procesarRegistroPedido'])->name('CarRegPed');
 Route::post('consultarArtVenta',[controladorVistas::class,'procesarRegistroVentas']);
 Route::post('searchStock',[controladorVistas::class,'procesarRegistroStock']);
+
+/*
+/--------------------------------------------------
+/Rutas de Proveedores para CRUD
+/--------------------------------------------------
+*/
+
+/*Rutas para controllador resourse*/
+
+Route::get('proveedor/create', [controladorBDProveedor::class,'create'])->name('proveedor.create');
+
+/*Store */
+Route::post('proveedor', [controladorBDProveedor::class,'store'])->name('proveedor.store');
+
+/*Index */
+Route::get('proveedor', [controladorBDProveedor::class,'index'])->name('proveedor.index');
+
+/*Edit */
+Route::get('proveedor/{id}/edit', [controladorBDProveedor::class,'edit'])->name('proveedor.edit');
+
+/*Update */
+Route::put('proveedor/{id}', [controladorBDProveedor::class,'update'])->name('proveedor.update');
+
+/*Show */
+Route::get('proveedor/{id}/show', [controladorBDProveedor::class,'show'])->name('proveedor.show');
+
+/*Delete */
+Route::delete('proveedor/{id}', [controladorBDProveedor::class,'destroy'])->name('proveedor.destroy');

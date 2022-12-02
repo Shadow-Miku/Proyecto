@@ -28,8 +28,8 @@ class validadorProveedores extends FormRequest
             'direccion'=>'required',
             'pais'=>'required',
             'contacto'=>'required',
-            'noFijo'=>'numeric|required|min:8',
-            'noCelular'=>'numeric|required|min:8',
+            'noFijo'=>'numeric|required|max:999999999999',
+            'noCelular'=>'numeric|required|max:999999999999',
             'correo'=>'email|required'
         ];
     }
