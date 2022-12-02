@@ -2,11 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controladorVistas;
-use App\Http\Controllers\controladorbdPedidos;
+use App\Http\Controllers\controladorbdPedido;
 use App\Http\Controllers\controladorbdComics;
 use App\Http\Controllers\controladorbdProveedor;
 use App\Http\Controllers\controladorbdStock;
-use App\Http\Controllers\controladorbdArticulos;
+use App\Http\Controllers\controladorBDArticulos;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,7 +38,7 @@ Route::post('searchStock',[controladorVistas::class,'procesarRegistroStock']);
 
 /*
 /--------------------------------------------------
-/Rutas de Proveedores para CRUD
+/Rutas deL CRUD Proveedor 
 /--------------------------------------------------
 */
 
@@ -62,3 +63,31 @@ Route::get('proveedor/{id}/show', [controladorBDProveedor::class,'show'])->name(
 
 /*Delete */
 Route::delete('proveedor/{id}', [controladorBDProveedor::class,'destroy'])->name('proveedor.destroy');
+
+/*
+/--------------------------------------------------
+/Rutas deL CRUD Comics 
+/--------------------------------------------------
+*/
+
+/*Rutas para controllador resourse*/
+
+Route::get('comic/create', [controladorbdComics::class,'create'])->name('comic.create');
+
+/*Store */
+Route::post('comic', [controladorbdComics::class,'store'])->name('comic.store');
+
+/*Index */
+Route::get('comic', [controladorbdComics::class,'index'])->name('comic.index');
+
+/*Edit */
+Route::get('comic/{id}/edit', [controladorbdComics::class,'edit'])->name('comic.edit');
+
+/*Update */
+Route::put('comic/{id}', [controladorbdComics::class,'update'])->name('comic.update');
+
+/*Show */
+Route::get('comic/{id}/show', [controladorbdComics::class,'show'])->name('comic.show');
+
+/*Delete */
+Route::delete('comic/{id}', [controladorbdComics::class,'destroy'])->name('comic.destroy');

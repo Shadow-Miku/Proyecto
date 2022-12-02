@@ -6,23 +6,23 @@
 @if (session()->has('actualizar'))
         {!!" <script> Swal.fire(
             'Siuuuuuuuu!',
-            'Recuerdo fresquisimo!',
+            'El proveedor fue actualizado',
             'success'
           ) </script>"!!}        
 @endif
 
 @if (session()->has('elimina'))
         {!!" <script> Swal.fire(
-            'Siuuuuuuuu!',
-            'El recuerdo ya no anda fresh',
+            'Operación exitosa',
+            'El proveedor fue dado de baja',
             'success'
           ) </script>"!!}        
 @endif
 
 @if (session()->has('confirmacion'))
         {!!" <script> Swal.fire(
-            'Siuuuuuuuu!',
-            'Recuerdo fresquisimo!',
+            'Afirmativo',
+            'Proveedor fresco!',
             'success'
           ) </script>"!!}        
     @endif
