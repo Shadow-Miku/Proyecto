@@ -38,18 +38,11 @@
                         <input type="text" class="form-control"  name="direccion" value="{{old('direccion')}}">
                         <p class="text-primary fst-italic"> {{ $errors->first('direccion') }}</p>
                     </div>
-
+<!--
                     <div class="mb-3">
-                        <label class="form-label">País</label>
-                        <input type="text"  
-                        multiple
-                        id="pais"
-                        list="drawpais"
-                        
-                        size="64"
-                        class="form-control" 
-                        name="pais" 
-                        value="{{old('pais')}}">
+                    
+                        <label class="form-label" for="drawpais">País</label>
+                        <input list="drawpais" multiple id="pais" list="drawpais" size="64" class="form-control" name="pais" value="{{old('pais')}}"/>
                         <p class="text-primary fst-italic"> {{ $errors->first('pais') }} </p>
                         <datalist id="drawpais">
                             <option value="México">Mex</option>
@@ -60,7 +53,27 @@
                             <option value="Japón">Jap</option>
                             <option value="Brasil">Bra</option>
                           </datalist>
+                       
+                    </div>-->
+
+                    <div class="mb-3">
+                        <label for="text" class="form-label">País</label>
+                        <select class="form-select" name="pais" aria-label="Default select example">
+                            <option selected> Selecciona un país...</option>
+                                <option value="México">México</option>
+                                <option value="Estados Unidos">Estados Unidos</option>
+                                <option value="Canadá">Canadá</option>
+                                <option value="España">España</option>
+                                <option value="Reino Unido">Reini Unido</option>
+                                <option value="Japón">Japón</option>
+                                <option value="Brasil">Brasil</option>
+                        </select>
+                    <p class="text-primary fst-italic" style="color: aqua"> 
+                        {{ $errors->first('pais') }} </p>
                     </div>
+                    
+
+                    
 
                     <div class="mb-3">
                         <label class="form-label">Contacto</label>

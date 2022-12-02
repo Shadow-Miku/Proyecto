@@ -1,7 +1,7 @@
-@extends('Template')
+@extends('plantilla')
 
 @section('contenido')
-@include('modalInsertar')
+@include('modalInsertarProveedor')
 
 @if (session()->has('actualizar'))
         {!!" <script> Swal.fire(
@@ -27,46 +27,52 @@
           ) </script>"!!}        
     @endif
 
-    <h1 class="display-1 mt mt-4 mb-4 text-center"> Proveedores registrados </h1>
+    <h1 class="display-1 mt-4 mb-4 text-center"> Proveedores registrados </h1>
     
-      <div class="container col-md-6 mb-5 mt-5 d-grid gap-2">
+      <div class="container mb-5 mt-5  gap-2">
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalInsertarProveedor">
           <i class="bi bi-plus"></i>  Agrega otro Proveedor
-        </button>
-      </div>
-
-    @foreach($ConsultaP as $consulta)
-    @include('modalActualizar')
-    @include('modalEliminar')
+        </button> 
     
-
-    <div class="container col-md-6 mt-5 mb-5">
-        <div class="card text-center">
-            <div class="card-header">
-              <h5 class="text-primary text center">{{$consulta->empresa}}</h5>
-            </div>
-
-            <div class="card-body">
-              <h5 class="card-title">{{$consulta->idProveedor}}</h5>
-              <p class="card-text">{{$consulta->empresa}}</p>
-              <p class="card-text">{{$consulta->direccion}}</p>
-              <p class="card-text">{{$consulta->pais}}</p>
-              <p class="card-text">{{$consulta->direccion}}</p>
-              <p class="card-text">{{$consulta->contacto}}</p>
-              <p class="card-text">{{$consulta->noFijo}}</p>
-              <p class="card-text">{{$consulta->noCelular}}</p>
-              <p class="card-text">{{$consulta->correo}}</p>
-            </div>
-
-            <div class="card-footer text-muted">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalActualizarProveedor{{$consulta->idRecuerdos}}">
-                  <i class="bi bi-pen"></i> Modificar datos del proveedor
-                </button>
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalEliminarProveedor{{$consulta->idRecuerdos}}">
-                  <i class="bi bi-trash2"></i>  Dar de baja proveedor 
-                </button>
-            </div>
-          </div>
-          </div>
-          @endforeach
+    <table class="table table-borderless table-striped table-hover" >
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Empresa</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Pais</th>
+                    <th scope="col">Contacto</th>
+                    <th scope="col">Numero Fijo</th>
+                    <th scope="col">Numero celular</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Modificar</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+              </thead>
+              <tbody>
+              @foreach($ConsultaP as $consulta)
+                <tr>
+                    <th scope="row">{{$consulta->idProveedor}}</th>
+                    <td>{{$consulta->empresa}}</td>
+                    <td>{{$consulta->direccion}}</td>
+                    <td>{{$consulta->pais}}</td>
+                    <td>{{$consulta->contacto}}</td>
+                    <td>{{$consulta->noFijo}}</td>
+                    <td>{{$consulta->noCel}}</td>
+                    <td>{{$consulta->correo}}</td>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalActualizarProveedor{{$consulta->idProveedor}}">
+                    <i class="bi bi-pen"></i> Modificar datos del proveedor
+                    </button></td>
+                    <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalEliminarProveedor{{$consulta->idProveedor}}">
+                    <i class="bi bi-trash2"></i>  Dar de baja proveedor 
+                    </button></td>
+                </tr>
+              </tbody> 
+              @include('modalActualizarProveedor')
+    @include('modalEliminarProveedor')
+    @endforeach
+        </table>
+        </div>
+    </div>
+    
 @stop

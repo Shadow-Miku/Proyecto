@@ -17,7 +17,7 @@ class controladorBDProveedor extends Controller
     public function index()
     {
         $ConsultaP= DB::table('tb_proveedores')->get();
-        return view('conProveedores',compact('ConsultaRecP'));
+        return view('conProveedores',compact('ConsultaP'));
     }
 
     /**
@@ -49,7 +49,7 @@ class controladorBDProveedor extends Controller
             "created_at"=> Carbon::now(),
             "updated_at"=> Carbon::now()
         ]);
-        return redirect('Proveedores')->with('confirmacion','abc');
+        return redirect('proveedor')->with('confirmacion','abc');
     }
 
     /**
@@ -62,7 +62,7 @@ class controladorBDProveedor extends Controller
     {
         $consultaId= DB::table('tb_proveedores')->where('idProveedor',$id)->first();
 
-        return view('modalEliminar', compact('consultaId'));
+        return view('modalEliminarProveedor', compact('consultaId'));
     }
 
     /**
@@ -75,7 +75,7 @@ class controladorBDProveedor extends Controller
     {
         $consultaId= DB::table('tb_proveedores')->where('idProveedor',$id)->first();
 
-        return view('modalActualizar', compact('consultaId'));
+        return view('modalActualizarProveedor', compact('consultaId'));
     }
 
     /**
@@ -98,7 +98,7 @@ class controladorBDProveedor extends Controller
             "updated_at"=> Carbon::now()
         ]);
 
-        return redirect('Proveedores')->with('actualizar','abc');
+        return redirect('proveedor')->with('actualizar','abc');
     }
 
     /**
@@ -111,6 +111,6 @@ class controladorBDProveedor extends Controller
     {
         DB::table('tb_proveedores')->where('idProveedor',$id)->delete();
 
-        return redirect('Proveedores')->with('elimina','abc');
+        return redirect('proveedor')->with('elimina','abc');
     }
 }
