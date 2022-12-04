@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modalEliminarProveedor{{$consulta->idProveedor}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalEliminarProveedor{{$consulta->idProveedor}}" aria-hidden="true">
+<div class="modal fade" id="modalEliminarArticulo{{$consulta->idArticulo}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalEliminarArticulo{{$consulta->idArticulo}}" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
 
@@ -9,17 +9,18 @@
       </div>
 
       <div class="modal-body">
-      <form method="POST" action="{{route('proveedor.destroy',$consulta->idProveedor)}}">
+      <form method="POST" action="{{route('articulo.destroy',$consulta->idArticulo)}}">
               @csrf
               @method('delete')
               
-            {{$consulta->empresa}}
-            {{$consulta->direccion}}
-            {{$consulta->pais}}
-            {{$consulta->contacto}}
-            {{$consulta->noFijo}}
-            {{$consulta->noCel}}
-            {{$consulta->correo}}
+              {{$consulta->tipo}}
+              {{$consulta->marca}}
+              {{$consulta->descripcion}}
+              {{$consulta->cantidadArticulos}}
+              {{$consulta->precioCompraAr}}
+              {{$consulta->precioVentaAr}}
+              {{$consulta->proveedor_Id}}
+              {{$consulta->fechaIngreso}}  
                 
       </div>
 

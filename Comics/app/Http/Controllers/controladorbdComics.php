@@ -52,7 +52,7 @@ class controladorbdComics extends Controller
             "created_at"=> Carbon::now(),
             "updated_at"=> Carbon::now()
         ]);
-        return redirect('comic/create')->with('confirmacion','abc');
+        return redirect('comic')->with('confirmacion','abc');
     }
 
     /**
@@ -77,7 +77,7 @@ class controladorbdComics extends Controller
     {
         $consultaId= DB::table('tb_comics')->where('idComic',$id)->first();
         $proveedores = tb_proveedores::all();
-        return view('modalActualizarComic', compact('consultaId'),compact('proveedores'));
+        return view('ActualizarComic', compact('consultaId'),compact('proveedores'));
     }
 
     /**

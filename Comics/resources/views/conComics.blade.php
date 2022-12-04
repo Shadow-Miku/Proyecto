@@ -1,7 +1,7 @@
 @extends('plantilla')
 
 @section('contenido')
-@include('modalInsertarComic')
+
 
 @if (session()->has('actualizar'))
         {!!" <script> Swal.fire(
@@ -30,7 +30,7 @@
     <h1 class="display-1 mt-4 mb-4 text-center"> Comics registrados </h1>
     
       <div class="container mb-5 mt-5  gap-2">
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalInsertarComic">
+        <button  class="btn btn-success"  onclick="location.href='{{route('comic.create')}}'">
           <i class="bi bi-plus"></i>  Registrar otro comic
         </button> 
     
@@ -62,7 +62,7 @@
                     <td>{{$consulta->precioVentaCo}}</td>
                     <td>{{$consulta->proveedor_Id}}</td>
                     <td>{{$consulta->fechaIngreso}}</td>          
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalActualizarComic{{$consulta->idComic}}">
+                    <td><button class="btn btn-primary" onclick="location.href='{{route('comic.edit',$consulta->idComic)}}'">
                     <i class="bi bi-pen"></i> Actualizar datos del comic
                     </button></td>
                     <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalEliminarComic{{$consulta->idComic}}">
@@ -70,7 +70,7 @@
                     </button></td>
                 </tr>
               </tbody> 
-              @include('modalActualizarComic')
+          
     @include('modalEliminarComic')
     @endforeach
         </table>

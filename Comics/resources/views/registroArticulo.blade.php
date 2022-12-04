@@ -14,18 +14,6 @@
 
         <h1 class="display-2 text-center mb-5"> Articulos </h1>
 
-        
-        <!--Errores arriba del formulario
-            @if ($errors->any())
-            @foreach ( $errors->all() as $error )
-                <div class="alert alert-warning alert-disimissible fade show" role="alert">
-                <strong> {{ $error }} </strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> </button></div>
-            @endforeach
-      
-        @endif-->
-            
-
         <div class="card mb-5">
 
             <div class="card-header fw-bold">
@@ -34,15 +22,9 @@
 
             <div class="card-body">
 
-                <form class="m-4" method="POST" action="CargarRegistroArticulo">
+                <form class="m-4" method="POST" action="{{route('articulo.store')}}">
                     @csrf
                     <!--Errores individuales y guardar los datos escritos-->
-                    
-                    <div class="mb-3">
-                        <label class="form-label" hidden>id de articulo en la base de datos</label>
-                        <input type="number" class="form-control" name="id"  hidden>
-                        <p class="text-primary fst-italic"></p>
-                    </div>
 
                     <div class="mb-3">
                         <label class="form-label">Tipo</label>
@@ -84,7 +66,9 @@
                     <label for="text" class="form-label">Proveedor </label>
                         <select class="form-select" name="txtProveedor" aria-label="Default select example">
                             <option selected> Selecciona un proveedor...</option>
-
+                             @foreach ($proveedor as $tb_proveedores)
+                                <option value="{{$tb_proveedores['idProveedor']}}">{{$tb_proveedores['empresa']}}</option>
+                             @endforeach
                         </select>
                     <p class="text-primary fst-italic" style="color: aqua"> 
                         {{ $errors->first('txtProveedor') }} </p>
