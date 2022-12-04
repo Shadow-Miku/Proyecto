@@ -25,12 +25,6 @@
                 <form class="m-4" method="POST" action="{{route('comic.store')}}">
                     @csrf
                     <!--Errores individuales y guardar los datos escritos-->
-                    
-                    <div class="mb-3">
-                        <label class="form-label" hidden>id de comic en la base de datos</label>
-                        <input type="number" class="form-control" hidden>
-                        <p class="text-primary fst-italic"></p>
-                    </div>
 
                     <div class="mb-3">
                         <label class="form-label">Nombre</label>
@@ -53,27 +47,27 @@
                     <div class="mb-3">
                         <label class="form-label">Cantidad de Comics</label>
                         <input type="number" min="0" class="form-control" name="cantidadComics" value="{{old('cantidadComics')}}">
-                        <p class="text-primary fst-italic"> <!--{{ $errors->first('cantidadComics') }}--> </p>
+                        <p class="text-primary fst-italic"> {{ $errors->first('cantidadComics') }} </p>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Precio compra Comic</label>
-                        <input type="numeric" class="form-control" name="precioCompraCm" id="compra" value="{{old('precioCompraCm')}}" step="0.001" oninput="calcular()">
+                        <input type="numeric" class="form-control" name="precioCompraCm" id="precioCompraCm" value="{{old('precioCompraCm')}}" step="0.001" oninput="calcular()">
                         <p class="text-primary fst-italic"> {{ $errors->first('precioCompraCm') }} </p>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Precio venta</label>
-                        <input type="numeric" class="form-control" name="precioVentaCm" id="venta" value="{{old('PrecioVentaCm')}}" step="0.001">
+                        <input type="numeric" class="form-control" name="precioVentaCm" id="precioVentaCm" value="{{old('PrecioVentaCm')}}" step="0.001">
                         <p class="text-primary fst-italic"> {{ $errors->first('precioVentaCm') }} </p>
                     </div>
 
                     <script type="text/javascript"> 
                         function calcular(){
                             try{
-                                var a= paseFloat(document.getElementById("compra").value)||0;
+                                var a= paseFloat(document.getElementById("precioCompraCm").value)||0;
 
-                                document.getElementById("venta").value = a * 1.40;
+                                document.getElementById("precioVentaCm").value = a * 1.40;
                             }catch (e){}
                         }
                     </script>

@@ -40,12 +40,14 @@
                     <th scope="col">ID</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Edicion</th>
-                    <th scope="col">Compa{ia</th>
+                    <th scope="col">Compañia</th>
                     <th scope="col">Cantidad de comics</th>
                     <th scope="col">Precio compra del comic</th>
                     <th scope="col">Precio de venta del comic</th>
                     <th scope="col">Proveedor</th>
                     <th scope="col">Fecha de ingreso</th>
+                    <th scope="col">Modificar</th>
+                    <th scope="col">Eliminar</th>
                 </tr>
               </thead>
               <tbody>
@@ -59,13 +61,11 @@
                     <td>{{$consulta->precioCompraCo}}</td>
                     <td>{{$consulta->precioVentaCo}}</td>
                     <td>{{$consulta->proveedor_Id}}</td>
-                    <td>{{$consulta->fechaIngreso}}</td>
-
-                  
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalActualizarComic{{$consulta->idProveedor}}">
+                    <td>{{$consulta->fechaIngreso}}</td>          
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalActualizarComic{{$consulta->idComic}}">
                     <i class="bi bi-pen"></i> Actualizar datos del comic
                     </button></td>
-                    <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalEliminarComic{{$consulta->idProveedor}}">
+                    <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalEliminarComic{{$consulta->idComic}}">
                     <i class="bi bi-trash2"></i>  Dar de baja el comic
                     </button></td>
                 </tr>
