@@ -91,3 +91,31 @@ Route::get('comic/{id}/show', [controladorbdComics::class,'show'])->name('comic.
 
 /*Delete */
 Route::delete('comic/{id}', [controladorbdComics::class,'destroy'])->name('comic.destroy');
+
+/*
+/--------------------------------------------------
+/Rutas deL CRUD Articulos 
+/--------------------------------------------------
+*/
+
+/*Rutas para controllador resourse*/
+
+Route::get('articulo/create', [controladorBDArticulos::class,'create'])->name('articulo.create');
+
+/*Store */
+Route::post('articulo', [controladorBDArticulos::class,'store'])->name('articulo.store');
+
+/*Index */
+Route::get('articulo', [controladorBDArticulos::class,'index'])->name('articulo.index');
+
+/*Edit */
+Route::get('articulo/{id}/edit', [controladorBDArticulos::class,'edit'])->name('articulo.edit');
+
+/*Update */
+Route::put('articulo/{id}', [controladorBDArticulos::class,'update'])->name('articulo.update');
+
+/*Show */
+Route::get('articulo/{id}/show', [controladorBDArticulos::class,'show'])->name('articulo.show');
+
+/*Delete */
+Route::delete('articulo/{id}', [controladorBDArticulos::class,'destroy'])->name('articulo.destroy');

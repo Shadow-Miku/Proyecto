@@ -17,8 +17,8 @@ class controladorbdComics extends Controller
      */
     public function index()
     {
-        $ConsultaC= DB::table('tb_proveedores')->get();
-        return view('conProveedores',compact('ConsultaC'));
+        $ConsultaC= DB::table('tb_comics')->get();
+        return view('conComics',compact('ConsultaC'));
     }
 
     /**
@@ -52,7 +52,7 @@ class controladorbdComics extends Controller
             "created_at"=> Carbon::now(),
             "updated_at"=> Carbon::now()
         ]);
-        return redirect('comic/create')->with('confirmacion','abc');
+        return redirect('comic')->with('confirmacion','abc');
     }
 
     /**
@@ -64,7 +64,6 @@ class controladorbdComics extends Controller
     public function show($id)
     {
         $consultaId= DB::table('tb_comics')->where('idComic',$id)->first();
-
         return view('modalEliminarComic', compact('consultaId'));
     }
 
@@ -78,7 +77,7 @@ class controladorbdComics extends Controller
     {
         $consultaId= DB::table('tb_comics')->where('idComic',$id)->first();
         $proveedores = tb_proveedores::all();
-        return view('modalActualizarComic', compact('consultaId'),compact('proveedores'));
+        return view('ActualizarComic', compact('consultaId'),compact('proveedores'));
     }
 
     /**
@@ -90,6 +89,7 @@ class controladorbdComics extends Controller
      */
     public function update(validadorComics $request, $id)
     {
+        
         DB::table('tb_comics')->where('idComic',$id)->update([
             "nombre"=> $request->input('nombre'),
             "edicion"=> $request->input('edicion'),
@@ -101,8 +101,8 @@ class controladorbdComics extends Controller
             "fechaIngreso"=> $request->input('fechaIngresoCm'),
             "updated_at"=> Carbon::now()
         ]);
-
-        return redirect('proveedor')->with('actualizar','abc');
+        
+        return redirect('comic')->with('actualizar','abc');
     }
 
     /**
@@ -115,6 +115,6 @@ class controladorbdComics extends Controller
     {
         DB::table('tb_comics')->where('idComic',$id)->delete();
 
-        return redirect('proveedor')->with('elimina','abc');
+        return redirect('comic')->with('elimina','abc');
     }
 }

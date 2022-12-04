@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\validadorArticulos;
+use App\Http\Requests\validadorComics;
 use Illuminate\Http\Request;
 use DB;
 use Carbon\Carbon;
 use App\Models\tb_proveedores;
+
 
 class controladorBDArticulos extends Controller
 {
@@ -16,7 +19,8 @@ class controladorBDArticulos extends Controller
      */
     public function index()
     {
-        //
+        $ConsultaA= DB::table('tb_articulos')->get();
+        return view('conArticulos',compact('ConsultaA'));
     }
 
     /**
@@ -26,7 +30,8 @@ class controladorBDArticulos extends Controller
      */
     public function create()
     {
-        //
+        $proveedor = tb_proveedores::all();
+        return view('RegistroArticulo',compact('proveedor'));
     }
 
     /**
@@ -35,9 +40,21 @@ class controladorBDArticulos extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(validadorArticulos $request)
     {
-        //
+        DB::table('tb_articulos')->insert([
+            "tipo"=> $request->input('tipo'),
+            "marca"=> $request->input('marca'),
+            "descripcion"=> $request->input('descripcion'),
+            "cantidadArticulos"=> $request->input('cantidadArticulos'),
+            "precioCompraAr"=> $request->input('precioCompraAr'),
+            "precioVentaAr"=> $request->input('precioVentaAr'),
+            "proveedor_Id"=> $request->input('txtProveedor'),
+            "fechaIngreso"=> $request->input('fechaIngresoAr'),
+            "created_at"=> Carbon::now(),
+            "updated_at"=> Carbon::now()
+        ]);
+        return redirect('articulo')->with('confirmacion','abc');
     }
 
     /**
@@ -48,7 +65,8 @@ class controladorBDArticulos extends Controller
      */
     public function show($id)
     {
-        //
+        $consultaId= DB::table('tb_articulos')->where('idArticulo',$id)->first();
+        return view('modalEliminarArticulo', compact('consultaId'));
     }
 
     /**
@@ -59,7 +77,9 @@ class controladorBDArticulos extends Controller
      */
     public function edit($id)
     {
-        //
+        $consultaId= DB::table('tb_articulos')->where('idArticulo',$id)->first();
+        $proveedores = tb_proveedores::all();
+        return view('ActualizarArticulo', compact('consultaId'),compact('proveedores'));
     }
 
     /**
@@ -69,9 +89,20 @@ class controladorBDArticulos extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(validadorArticulos $request, $id)
     {
-        //
+        DB::table('tb_articulos')->where('idArticulo',$id)->update([
+            "tipo"=> $request->input('tipo'),
+            "marca"=> $request->input('marca'),
+            "descripcion"=> $request->input('descripcion'),
+            "cantidadArticulos"=> $request->input('cantidadArticulos'),
+            "precioCompraAr"=> $request->input('precioCompraAr'),
+            "precioVentaAr"=> $request->input('precioVentaAr'),
+            "proveedor_Id"=> $request->input('txtProveedor'),
+            "fechaIngreso"=> $request->input('fechaIngresoAr'),
+            "updated_at"=> Carbon::now()
+        ]);
+        return redirect('articulo')->with('actualizar','abc');
     }
 
     /**
@@ -82,6 +113,8 @@ class controladorBDArticulos extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('tb_articulos')->where('idArticulo',$id)->delete();
+
+        return redirect('articulo')->with('elimina','abc');
     }
 }
