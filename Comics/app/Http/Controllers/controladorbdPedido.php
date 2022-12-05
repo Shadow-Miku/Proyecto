@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\validadorPedidos;
 use Illuminate\Http\Request;
+use DB;
+use Carbon\Carbon;
+use App\Models\tb_proveedores;
 
 class controladorbdPedido extends Controller
 {
@@ -23,7 +27,8 @@ class controladorbdPedido extends Controller
      */
     public function create()
     {
-        //
+        $proveedor = tb_proveedores::all();
+        return view('Pedidos',compact('proveedor'));
     }
 
     /**
@@ -32,9 +37,17 @@ class controladorbdPedido extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(validadorPedidos $request)
     {
-        //
+        DB::table('tb_pedidos')->insert([
+            "proveedor_Id"=> $request->input('txtproveedor'),
+            "descripcion"=> $request->input('txtarticulo'),
+            "cantidadPedido"=> $request->input('txtCantidad'),
+            "fechaPedido"=> $request->input('fechaPedido'),
+            "created_at"=> Carbon::now(),
+            "updated_at"=> Carbon::now()
+        ]);
+        return redirect('pedido/create')->with('confirmacion','abc');
     }
 
     /**
