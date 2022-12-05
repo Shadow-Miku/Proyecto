@@ -22,19 +22,24 @@
 
             <div class="card-body">
 
-                <form class="m-4" method="POST" action="CargarRegistroPedido">
+                <form class="m-4" method="POST" action="{{route('pedido.store')}}">
                     @csrf
-                    <!--Errores individuales y guardar los datos escritos-->
-                    
+                    <!--Errores individuales y guardar los datos escritos-->                  
+
                         <div class="mb-3">
-                            <label class="form-label">Proveedor</label>
-                            <input  class="form-control" name="txtproveedor" value="{{old('txtproveedor')}}" placeholder="Seleccione el proveedor">
-                            
-                            <p class="text-primary"> {{ $errors->first('txtproveedor')}} </p>
-                        </div>
+                            <label for="text" class="form-label">Proveedor </label>
+                                <select class="form-select" name="txtproveedor" aria-label="Default select example">
+                                    <option selected> </option>
+                                    @foreach ($proveedor as $tb_proveedores)
+                                        <option value="{{$tb_proveedores['idProveedor']}}">{{$tb_proveedores['empresa']}}</option>
+                                    @endforeach
+                                </select>
+                            <p class="text-primary fst-italic" style="color: aqua"> 
+                                {{ $errors->first('txtproveedor') }} </p>
+                            </div>
                         
                         <div class="mb-3">
-                            <label class="form-label">Articulo del proveedor: </label>
+                            <label class="form-label">Descripcion del pedido: </label>
                             <input type="text" class="form-control" name="txtarticulo" value="{{old('txtarticulo')}}">
                             <p class="text-primary fst-italic"> {{ $errors->first('txtarticulo') }}</p>
                         </div>
@@ -46,15 +51,9 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Correo: </label>
-                            <input type="email" class="form-control" name="txtEmail" value="{{old('txtEmail')}}">
-                            <p class="text-primary fst-italic"> {{ $errors->first('txtEmail') }}</p>
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label">Direccion de envio: </label>
-                            <input type="text" class="form-control" name="txtDireccion" value="{{old('txtDireccion')}}">
-                            <p class="text-primary fst-italic"> {{ $errors->first('txtDireccion') }}</p>
+                            <label class="form-label">Fecha pedido</label>
+                            <input type="datetime-local" id="datetime" class="form-control" name="fechaPedido" value="{{old('fechapedido')}}">
+                            <p class="text-primary fst-italic"> {{ $errors->first('fechaPedido') }} </p>
                         </div>
 
             </div>

@@ -27,8 +27,7 @@ class validadorPedidos extends FormRequest
             'txtproveedor'=>'required',
             'txtarticulo'=>'required',
             'txtCantidad'=>'numeric|required|max:50',
-            'txtEmail'=>'required',
-            'txtDireccion'=>'required'
+            'fechaPedido'=>'required'
         ];
     }
 }

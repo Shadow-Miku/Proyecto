@@ -35,14 +35,14 @@
           </div>
 
           <div class="mb-3">
-              <label class="form-label">Compania </label>
+              <label class="form-label">Compañia </label>
               <input type="text" class="form-control" name="compania" value="{{$consultaId->compania}}">
               <p class="text-primary fst-italic"> {{ $errors->first('compania') }} </p>
           </div>
 
           <div class="mb-3">
               <label class="form-label">Cantidad de comics </label>
-              <input type="text" class="form-control" name="cantidadComics" value="{{$consultaId->cantidadComics}}">
+              <input type="number" min="0" class="form-control" name="cantidadComics" value="{{$consultaId->cantidadComics}}">
               <p class="text-primary fst-italic"> {{ $errors->first('cantidadComics') }}</p>
           </div>
 

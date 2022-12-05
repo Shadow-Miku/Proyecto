@@ -119,3 +119,34 @@ Route::get('articulo/{id}/show', [controladorBDArticulos::class,'show'])->name('
 
 /*Delete */
 Route::delete('articulo/{id}', [controladorBDArticulos::class,'destroy'])->name('articulo.destroy');
+
+/*
+/--------------------------------------------------
+/Rutas deL CR Pedidos 
+/--------------------------------------------------
+*/
+
+/*Rutas para controllador resourse*/
+
+Route::get('pedido/create', [controladorbdPedido::class,'create'])->name('pedido.create');
+
+/*Store */
+Route::post('pedido', [controladorbdPedido::class,'store'])->name('pedido.store');
+
+/*Index 
+Route::get('articulo', [controladorBDArticulos::class,'index'])->name('articulo.index');*/
+
+/*Edit 
+Route::get('articulo/{id}/edit', [controladorBDArticulos::class,'edit'])->name('articulo.edit');*/
+
+/*Update 
+Route::put('articulo/{id}', [controladorBDArticulos::class,'update'])->name('articulo.update');*/
+
+/*Show */
+Route::get('pedido/{id}/show', [controladorbdPedido::class,'show'])->name('pedido.show');
+
+/*Delete 
+Route::delete('articulo/{id}', [controladorBDArticulos::class,'destroy'])->name('articulo.destroy');*/
+
+
+
