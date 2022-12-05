@@ -59,7 +59,7 @@
                     <div class="mb-3">
                         <label for="text" class="form-label">País</label>
                         <select class="form-select" name="pais" aria-label="Default select example">
-                            <option selected> Selecciona un país...</option>
+                            <option disabled selected> Selecciona un país...</option>
                                 <option value="México">México</option>
                                 <option value="Estados Unidos">Estados Unidos</option>
                                 <option value="Canadá">Canadá</option>

@@ -65,7 +65,7 @@
                     <div class="mb-3">
                     <label for="text" class="form-label">Proveedor </label>
                         <select class="form-select" name="txtProveedor" aria-label="Default select example">
-                            <option selected> Selecciona un proveedor...</option>
+                            <option disabled selected> Selecciona un Proveedor</option>
                              @foreach ($proveedor as $tb_proveedores)
                                 <option value="{{$tb_proveedores['idProveedor']}}">{{$tb_proveedores['empresa']}}</option>
                              @endforeach
