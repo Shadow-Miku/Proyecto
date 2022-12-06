@@ -58,7 +58,7 @@
 <!--
                     <div class="mb-3">
                         <label class="form-label">Precio venta</label>
-                        <input type="numeric" class="form-control" name="precioVentaCm" id="precioVentaCm" value="{{old('PrecioVentaCm')}}" step="0.001">
+                        <input type="numeric" class="form-control" name="precioVentaCm" id="precioVentaCm" value="{{old('precioVentaCm')}}" step="0.001">
                         <p class="text-primary fst-italic"> {{ $errors->first('precioVentaCm') }} </p>
                     </div>
 
@@ -76,7 +76,7 @@
                     <div class="mb-3">
                         <label for="text" class="form-label">Proveedor </label>
                             <select class="form-select" name="txtProveedor" aria-label="Default select example">
-                                <option selected> Selecciona un proveedor...</option>
+                                <option disabled selected >Selecciona un Porveedor</option>
                                 @foreach ($proveedor as $tb_proveedores)
                                     <option value="{{$tb_proveedores['idProveedor']}}">{{$tb_proveedores['empresa']}}</option>
                                 @endforeach
