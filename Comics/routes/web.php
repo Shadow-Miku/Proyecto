@@ -7,6 +7,7 @@ use App\Http\Controllers\controladorbdComics;
 use App\Http\Controllers\controladorbdProveedor;
 use App\Http\Controllers\controladorbdStock;
 use App\Http\Controllers\controladorBDArticulos;
+use App\Http\Controllers\registerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,7 @@ Route::get('Proveedores', [controladorVistas::class,'showProveedores'])->name('a
 Route::get('Pedidos', [controladorVistas::class,'showPedidos'])->name('apPedid');
 Route::get('Stock', [controladorVistas::class,'showStock'])->name('apStock');
 Route::get('Ventas', [controladorVistas::class,'showVentas'])->name('apVentas');
+Route::get('register', function(){return view('auth.register');});
 
 /*
 /--------------------------------------------------
@@ -147,6 +149,14 @@ Route::get('pedido/{id}/show', [controladorbdPedido::class,'show'])->name('pedid
 
 /*Delete 
 Route::delete('articulo/{id}', [controladorBDArticulos::class,'destroy'])->name('articulo.destroy');*/
+
+
+
+
+
+
+//Ruta para acceder a Registrar usuario desde POST
+Route::post('register',[registerController::class,'register']);
 
 
 
