@@ -207,7 +207,7 @@
                           <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Registrar</span> </a>
                           <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                           <li>
-                            <a href="Proveedores" class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Registrar Proveedores</span> </a>
+                            <a href="{{ route('proveedor.create') }}" class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Registrar Proveedores</span> </a>
                           </li>
                           <li class="w-100">
                               <a href=" {{ route('articulo.create') }} " class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Registrar Articulos</span> </a>
