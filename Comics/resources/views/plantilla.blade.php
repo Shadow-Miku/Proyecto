@@ -224,12 +224,12 @@
                           <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Pedidos</span></a>
                   </li>
 
-                  <!--enlace stock-->
+                  <!--enlace stock
                   <li>
                       <a href=" {{ route('apStock') }} " class="nav-link px-0 align-middle">
                           <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Stock</span> </a>
                   </li>
-
+                            -->
                   <!--enlace ventas-->
                   <li>
                     <a href=" {{ route('apVentas') }} " class="nav-link px-0 align-middle">
@@ -241,10 +241,10 @@
                           <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Consultas</span> </a>
                           <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                           <li class="w-100">
-                              <a href=" {{ route('articulo.index') }} " class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Consultas Articulos</span> </a>
+                              <a href=" {{ route('articulo.index') }} " class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Stock Articulos</span> </a>
                           </li>
                           <li>
-                              <a href=" {{ route('comic.index') }} " class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Consultas Comics</span> </a>
+                              <a href=" {{ route('comic.index') }} " class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Stock Comics</span> </a>
                           </li>
                           <li>
                             <a href="{{ route('proveedor.index') }}" class="nav-link px-0"> <span class="d-none d-sm-inline">&nbsp; &nbsp; Consultas Proveedores</span> </a>
