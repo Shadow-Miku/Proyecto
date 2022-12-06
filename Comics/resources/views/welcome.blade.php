@@ -51,19 +51,20 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    <form>
+                                    <form action="welcome" method="POST">
+                                        @csrf
                                         <div class="mb-3">
-                                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario">
+                                          <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario">
                                           <!--<div id="emailHelp" class="form-text">Buenas, ingrese su correo de empleado</div>-->
                                           <br>
                                         </div>
 
                                         <div class="mb-3">
-                                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+                                          <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
                                           <br>
                                         </div>
                                         
-                                        <button type="submit" class="btn btn-secondary" onclick="location.href='Principal'">Entrar</button>
+                                        <button type="submit" class="btn btn-secondary">Entrar</button>
                                         <button type="button" class="btn btn-secondary" onclick="location.href='register'">Registrate</button>
                                       </form>
                                 </div>
