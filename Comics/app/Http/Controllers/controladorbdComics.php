@@ -40,13 +40,16 @@ class controladorbdComics extends Controller
      */
     public function store(validadorComics $request)
     {
+        $vpc= $request->input('precioCompraCm');
+        $vpv= $vpc*1.40;
+
         DB::table('tb_comics')->insert([
             "nombre"=> $request->input('nombre'),
             "edicion"=> $request->input('edicion'),
             "compania"=> $request->input('compania'),
             "cantidadComics"=> $request->input('cantidadComics'),
             "precioCompraCo"=> $request->input('precioCompraCm'),
-            "precioVentaCo"=> $request->input('precioVentaCm'),
+            "precioVentaCo"=> $vpv,
             "proveedor_Id"=> $request->input('txtProveedor'),
             "fechaIngreso"=> $request->input('fechaIngresoCm'),
             "created_at"=> Carbon::now(),
@@ -89,14 +92,16 @@ class controladorbdComics extends Controller
      */
     public function update(validadorComics $request, $id)
     {
-        
+        $vpc= $request->input('precioCompraCm');
+        $vpv= $vpc*1.40;
+
         DB::table('tb_comics')->where('idComic',$id)->update([
             "nombre"=> $request->input('nombre'),
             "edicion"=> $request->input('edicion'),
             "compania"=> $request->input('compania'),
             "cantidadComics"=> $request->input('cantidadComics'),
             "precioCompraCo"=> $request->input('precioCompraCm'),
-            "precioVentaCo"=> $request->input('precioVentaCm'),
+            "precioVentaCo"=> $vpv,
             "proveedor_Id"=> $request->input('txtProveedor'),
             "fechaIngreso"=> $request->input('fechaIngresoCm'),
             "updated_at"=> Carbon::now()
