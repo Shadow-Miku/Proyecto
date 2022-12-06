@@ -53,11 +53,7 @@
               <p class="text-primary fst-italic"> {{ $errors->first('precioCompraCm') }}</p>
           </div>
 
-          <div class="mb-3">
-              <label class="form-label">Precio venta </label>
-              <input type="numeric" class="form-control" name="precioVentaCm" value="{{$consultaId->precioVentaCo}}">
-              <p class="text-primary fst-italic"> {{ $errors->first('precioVentaCm') }} </p>
-          </div>
+          
 
           <div class="mb-3">
             <label for="text" class="form-label">Proveedor </label>
