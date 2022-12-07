@@ -12,7 +12,7 @@
 
     <div class="container mt-5 col-md-6">
 
-        <h1 class="display-2 text-center mb-5"> Pedidos </h1>      
+        <h1 class="display-2 text-center mb-5"> Articulos </h1>      
 
         <div class="card mb-5">
 
@@ -26,7 +26,7 @@
                     @csrf                 
                         <div class="mb-3">
                             <label class="form-label">Descripcion del pedido: </label>
-                            <input type="text" class="form-control" name="nombre" value="{{$consultaPedido->nombre}}">
+                            <input type="text" class="form-control" name="nombre" value="{{$consultaArticulo->descripcion}}">
                             <p class="text-primary fst-italic"> {{ $errors->first('txtarticulo') }}</p>
                         </div>
 

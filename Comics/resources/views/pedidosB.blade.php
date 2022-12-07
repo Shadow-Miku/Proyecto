@@ -11,7 +11,7 @@
                 <tr>
                     <th scope="col">Id Proveedor</th>
                     <th scope="col">Empresa</th>
-                    <th scope="col">Comic</th>
+                    <th scope="col">Producto</th>
                     <th scope="col">Pedir</th>
                 </tr>
               </thead>
@@ -21,13 +21,13 @@
                     <th scope="row">{{$consulta->idProveedor}}</th>
                     <td>{{$consulta->empresa}}</td>
                     <td>{{$consulta->nombre}}</td>
-                    <td><button class="btn btn-success" onclick="location.href='{{route('pedido.create')}}'">
+                    <td><button class="btn btn-success" onclick="location.href='{{route('pedidos.comic',$consulta->idComic)}}'">
                         <i class="bi bi-pen"></i> Solicitar pedido
                         </button></td>
                 </tr>
               </tbody> 
     @endforeach
-        </table>
+            </table>
 
     
         <table class="table table-borderless table-striped table-hover" >
@@ -42,10 +42,10 @@
               <tbody>
     @foreach($ConsultaA as $consultab)
                 <tr>
-                    <th scope="row">{{$consulta->idProveedor}}</th>
+                    <th scope="row">{{$consultab->idProveedor}}</th>
                     <td>{{$consultab->empresa}}</td>
                     <td>{{$consultab->descripcion}}</td>
-                    <td><button class="btn btn-success" onclick="location.href='{{route('pedido.create')}}'">
+                    <td><button class="btn btn-success" onclick="location.href='{{route('pedidos.articulos',$consultab->idArticulo)}}'">
                         <i class="bi bi-pen"></i> Solicitar pedido
                         </button></td>
                 </tr>
