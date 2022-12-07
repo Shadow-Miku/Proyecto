@@ -54,13 +54,15 @@
                                     <form action="welcome" method="POST">
                                         @csrf
                                         <div class="mb-3">
-                                          <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario">
+                                          <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario" value="{{old('username')}}">
+                                          <p class="text-light fst-italic"> {{ $errors->first('username') }} </p>
                                           <!--<div id="emailHelp" class="form-text">Buenas, ingrese su correo de empleado</div>-->
                                           <br>
                                         </div>
 
                                         <div class="mb-3">
-                                          <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+                                          <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" value="{{old('password')}}">
+                                          <p class="text-light fst-italic"> {{ $errors->first('password') }} </p>
                                           <br>
                                         </div>
                                         

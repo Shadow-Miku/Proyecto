@@ -44,10 +44,14 @@
                             
                             <form action="/register" method="POST">
                                 @csrf
-                                <input class="m-4" type="text" name="username" placeholder="Usuario">
-                                <input class="m-4" type="email" name="email" placeholder="Correo">
-                                <input class="m-4" type="password" name="password" placeholder="Contraseña">
-                                <input class="m-4" type="password" name="password_confirmation" placeholder="Confirma Contraseña">
+                                <input class="m-4" type="text" name="username" placeholder="Usuario" value="{{old('username')}}">
+                                <p class="text-primary fst-italic"> {{ $errors->first('username') }} </p>
+                                <input class="m-4" type="email" name="email" placeholder="Correo" value="{{old('email')}}">
+                                <p class="text-primary fst-italic"> {{ $errors->first('email') }} </p>
+                                <input class="m-4" type="password" name="password" placeholder="Contraseña" value="{{old('password')}}">
+                                <p class="text-primary fst-italic"> {{ $errors->first('password') }} </p>
+                                <input class="m-4" type="password" name="password_confirmation" placeholder="Confirma Contraseña" value="{{old('password')}}">
+                                <p class="text-primary fst-italic"> {{ $errors->first('password_confirmation') }} </p>
                                 
                         </div>
                             <div class="card-footer text-muted ">
