@@ -57,7 +57,7 @@
                     <td>{{$consulta->tipo}}</td>
                     <td>{{$consulta->marca}}</td>
                     <td>{{$consulta->descripcion}}</td>
-                    <td>{{$consulta->cantidadArticulos}}</td>
+                    <td class="{{($consulta->cantidadArticulos==0)? 'table-danger':'' }}">{{$consulta->cantidadArticulos}}</td>
                     <td>{{$consulta->precioCompraAr}}</td>
                     <td>{{$consulta->precioVentaAr}}</td>
                     <td>{{$consulta->proveedor_Id}}</td>

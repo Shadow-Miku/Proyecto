@@ -42,13 +42,16 @@ class controladorBDArticulos extends Controller
      */
     public function store(validadorArticulos $request)
     {
+        $vpa= $request->input('precioCompraAr');
+        $vpv= $vpa*1.40;
+
         DB::table('tb_articulos')->insert([
             "tipo"=> $request->input('tipo'),
             "marca"=> $request->input('marca'),
             "descripcion"=> $request->input('descripcion'),
             "cantidadArticulos"=> $request->input('cantidadArticulos'),
             "precioCompraAr"=> $request->input('precioCompraAr'),
-            "precioVentaAr"=> $request->input('precioVentaAr'),
+            "precioVentaAr"=> $vpv,
             "proveedor_Id"=> $request->input('txtProveedor'),
             "fechaIngreso"=> $request->input('fechaIngresoAr'),
             "created_at"=> Carbon::now(),
@@ -91,13 +94,15 @@ class controladorBDArticulos extends Controller
      */
     public function update(validadorArticulos $request, $id)
     {
+        $vpa= $request->input('precioCompraAr');
+        $vpv= $vpa*1.40;
         DB::table('tb_articulos')->where('idArticulo',$id)->update([
             "tipo"=> $request->input('tipo'),
             "marca"=> $request->input('marca'),
             "descripcion"=> $request->input('descripcion'),
             "cantidadArticulos"=> $request->input('cantidadArticulos'),
             "precioCompraAr"=> $request->input('precioCompraAr'),
-            "precioVentaAr"=> $request->input('precioVentaAr'),
+            "precioVentaAr"=> $vpv,
             "proveedor_Id"=> $request->input('txtProveedor'),
             "fechaIngreso"=> $request->input('fechaIngresoAr'),
             "updated_at"=> Carbon::now()
