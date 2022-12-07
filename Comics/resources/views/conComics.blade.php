@@ -57,9 +57,9 @@
                     <td>{{$consulta->nombre}}</td>
                     <td>{{$consulta->edicion}}</td>
                     <td>{{$consulta->compania}}</td>
-                    <td>{{$consulta->cantidadComics}}</td>
+                    <td class="{{($consulta->cantidadComics==0)? 'table-danger':'' }}">{{$consulta->cantidadComics}}</td>
                     <td>{{$consulta->precioCompraCo}}</td>
-                    <td>{{$consulta->precioVentaCo}}</td>
+                    <td>{{$consulta->precioVentaCo}}</td> 
                     <td>{{$consulta->proveedor_Id}}</td>
                     <td>{{$consulta->fechaIngreso}}</td>          
                     <td><button class="btn btn-primary" onclick="location.href='{{route('comic.edit',$consulta->idComic)}}'">

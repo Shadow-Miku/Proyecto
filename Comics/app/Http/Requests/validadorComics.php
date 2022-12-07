@@ -29,7 +29,7 @@ class validadorComics extends FormRequest
             'compania'=>'required',
             'cantidadComics'=>'numeric|required',
             'precioCompraCm'=>'numeric|required',
-            
+        
             'txtProveedor'=>'required',
             'fechaIngresoCm'=>'required'
         ];

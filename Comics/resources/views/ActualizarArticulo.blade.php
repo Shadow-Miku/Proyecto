@@ -52,12 +52,6 @@
                   </div>
 
                   <div class="mb-3">
-                      <label class="form-label">Precio venta</label>
-                      <input type="numeric" class="form-control" name="precioVentaAr" value="{{$consultaId->precioVentaAr}}">
-                      <p class="text-primary fst-italic"> {{ $errors->first('precioVentaAr') }} </p>
-                  </div>
-
-                  <div class="mb-3">
                   <label for="text" class="form-label">Proveedor </label>
                       <select class="form-select" name="txtProveedor" aria-label="Default select example">
                           <option selected> selecciona un proveedor...</option>
