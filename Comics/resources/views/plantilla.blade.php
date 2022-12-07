@@ -220,7 +220,7 @@
 
                   <!--enlace pedidos-->
                   <li>
-                      <a href=" {{ route('pedido.create') }} " class="nav-link px-0 align-middle">
+                      <a href=" {{ route('pedidosB.listado') }} " class="nav-link px-0 align-middle">
                           <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Pedidos</span></a>
                   </li>
 

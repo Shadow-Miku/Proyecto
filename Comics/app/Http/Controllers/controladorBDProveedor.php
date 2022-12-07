@@ -14,10 +14,12 @@ class controladorBDProveedor extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $filtrar = $request->get('filtrar');
+        $consultaProveedor = DB::table('tb_proveedores')->where('empresa','like','%'.$filtrar.'%')->get();
         $ConsultaP= DB::table('tb_proveedores')->get();
-        return view('conProveedores',compact('ConsultaP'));
+        return view('conProveedores',compact('ConsultaP','filtrar','consultaProveedor'));
     }
 
     /**

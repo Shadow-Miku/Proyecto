@@ -17,10 +17,12 @@ class controladorBDArticulos extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $filtrar = $request->get('filtrar');
+        $consultaArticulo = DB::table('tb_articulos')->where('descripcion','like','%'.$filtrar.'%')->get();
         $ConsultaA= DB::table('tb_articulos')->get();
-        return view('conArticulos',compact('ConsultaA'));
+        return view('conArticulos',compact('ConsultaA','filtrar','consultaArticulo'));
     }
 
     /**

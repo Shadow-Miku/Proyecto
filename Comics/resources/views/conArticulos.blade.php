@@ -29,9 +29,15 @@
 
     <h1 class="display-1 mt-4 mb-4 text-center"> Articulos registrados </h1>
     
-      <div class="container mb-5 mt-5  gap-2">
-        <button class="btn btn-success"  onclick="location.href='{{route('articulo.create')}}'">
-          <i class="bi bi-plus"></i>  Registrar otro articulo
+      <form action="{{route('articulo.index')}}">
+        <input type="search" placeholder="Buscar un articulo..." name="filtrar" class="form-control">
+          <button type="submit" class="btn btn-primary">
+            <i class="bi bi-pen"></i> Buscar articulo </button>
+      </form>
+
+        <div class="container mb-5 mt-5  gap-2">
+          <button class="btn btn-success"  onclick="location.href='{{route('articulo.create')}}'">
+            <i class="bi bi-plus"></i>  Registrar otro articulo
         </button> 
     
     <table class="table table-borderless table-striped table-hover" >
@@ -51,7 +57,7 @@
                 </tr>
               </thead>
               <tbody>
-              @foreach($ConsultaA as $consulta)
+              @foreach($consultaArticulo as $consulta)
                 <tr>
                     <th scope="row">{{$consulta->idArticulo}}</th>
                     <td>{{$consulta->tipo}}</td>

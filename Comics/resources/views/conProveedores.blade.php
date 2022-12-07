@@ -29,6 +29,12 @@
 
     <h1 class="display-1 mt-4 mb-4 text-center"> Proveedores registrados </h1>
     
+    <form action="{{route('proveedor.index')}}">
+      <input type="search" placeholder="Buscar un proveedor..." name="filtrar" class="form-control">
+        <button type="submit" class="btn btn-primary">
+          <i class="bi bi-pen"></i> Buscar proveedor </button>
+    </form>
+
       <div class="container mb-5 mt-5  gap-2">
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalInsertarProveedor">
           <i class="bi bi-plus"></i>  Agrega otro Proveedor
@@ -50,7 +56,7 @@
                 </tr>
               </thead>
               <tbody>
-              @foreach($ConsultaP as $consulta)
+              @foreach($consultaProveedor as $consulta)
                 <tr>
                     <th scope="row">{{$consulta->idProveedor}}</th>
                     <td>{{$consulta->empresa}}</td>
