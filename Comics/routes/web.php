@@ -9,6 +9,7 @@ use App\Http\Controllers\controladorbdStock;
 use App\Http\Controllers\controladorBDArticulos;
 use App\Http\Controllers\registerController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\controladorListado;
 
 /*
 |--------------------------------------------------------------------------
@@ -166,6 +167,10 @@ Route::post('register',[registerController::class,'register']);
 //Rutas para login
 Route::get('welcome', [loginController::class,'show']);
 Route::post('welcome', [loginController::class,'login']);
+
+
+/////////////////////////////////////////////// PEDIDOS LISTADO//////////////////////////////////////
+Route::get('pedidosB',[controladorListado::class,'listado'])->name('pedidosB.listado');
 
 
 
