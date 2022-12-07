@@ -15,10 +15,13 @@ class controladorbdComics extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $filtrarC = $request->get('filtrarC');
+        $consultaComic = DB::table('tb_comics')->where('nombre','like','%'.$filtrarC.'%')->get();
         $ConsultaC= DB::table('tb_comics')->get();
-        return view('conComics',compact('ConsultaC'));
+        return view('conComics',compact('ConsultaC','filtrarC','consultaComic'));
+
     }
 
     /**
@@ -122,4 +125,5 @@ class controladorbdComics extends Controller
 
         return redirect('comic')->with('elimina','abc');
     }
+
 }
