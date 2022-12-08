@@ -139,23 +139,15 @@ Route::get('pedido/create', [controladorbdPedido::class,'create'])->name('pedido
 
 /*Store */
 Route::post('pedido', [controladorbdPedido::class,'store'])->name('pedido.store');
+
 /*Index de pedido */
 Route::get('ConPedidos', [controladorBDPedido::class,'index'])->name('pedido.index');
-/*Index 
-Route::get('articulo', [controladorBDArticulos::class,'index'])->name('articulo.index');*/
-
-/*Edit 
-Route::get('articulo/{id}/edit', [controladorBDArticulos::class,'edit'])->name('articulo.edit');*/
-
-/*Update 
-Route::put('articulo/{id}', [controladorBDArticulos::class,'update'])->name('articulo.update');*/
 
 /*Show */
 Route::get('pedido/{id}/show', [controladorbdPedido::class,'show'])->name('pedido.show');
 
-/*Delete 
-Route::delete('articulo/{id}', [controladorBDArticulos::class,'destroy'])->name('articulo.destroy');*/
-
+/*PDF */
+Route::get('/ConPedidos/imprimir/{id}', [controladorbdPedido::class,'imprimir'])->name('pedido.imprimir');
 
 
 
