@@ -28,7 +28,6 @@
               </tbody> 
     @endforeach
             </table>
-
     
         <table class="table table-borderless table-striped table-hover" >
             <thead>
@@ -52,6 +51,7 @@
               </tbody> 
     @endforeach
         </table>
+        <a href="{{route('pedido.index')}}">Ir a consulta de Pedidos</a>
         </div>
     </div>
     

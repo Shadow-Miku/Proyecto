@@ -17,7 +17,8 @@ class controladorbdPedido extends Controller
      */
     public function index()
     {
-        //
+        $ConsultaPedidos= DB::table('tb_pedidos')->get();
+        return view('conPedidos',compact('ConsultaPedidos'));
     }
 
     /**
@@ -41,13 +42,13 @@ class controladorbdPedido extends Controller
     {
         DB::table('tb_pedidos')->insert([
             "proveedor_Id"=> $request->input('txtproveedor'),
-            "descripcion"=> $request->input('txtarticulo'),
+            "descripcion"=> $request->input('nombre'),
             "cantidadPedido"=> $request->input('txtCantidad'),
             "fechaPedido"=> $request->input('fechaPedido'),
             "created_at"=> Carbon::now(),
             "updated_at"=> Carbon::now()
         ]);
-        return redirect('pedido/create')->with('confirmacion','abc');
+        return redirect('ConPedidos')->with('confirmacion','abc');
     }
 
     /**
