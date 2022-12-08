@@ -82,13 +82,13 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">No Fijo:</label>
+                        <label class="form-label">Numero Fijo:</label>
                         <input type="numeric" class="form-control"  name="noFijo" value="{{old('noFijo')}}">
                         <p class="text-primary fst-italic"> {{ $errors->first('noFijo') }} </p>
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">No Celular:</label>
+                        <label class="form-label">Numero Celular:</label>
                         <input type="numeric" class="form-control"  name="noCelular" value="{{old('noCelular')}}">
                         <p class="text-primary fst-italic"> {{ $errors->first('noCelular') }} </p>
                     </div>

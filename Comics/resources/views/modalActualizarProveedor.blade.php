@@ -18,13 +18,13 @@
 
             <!--Errores individuales y guardar los datos escritos-->
             <div class="mb-3">
-                <label class="form-label">Empresa: </label>
+                <label class="form-label">Nombre de la Empresa: </label>
                 <input type="text" class="form-control" name="empresa" value="{{$consulta->empresa}}">
                 <p class="text-primary fst-italic"> {{ $errors->first('empresa') }}</p>
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Dirección: </label>
+                <label class="form-label">Dirección de la Empresa: </label>
                 <input type="text" class="form-control" name="direccion" value="{{$consulta->direccion}}">
                 <p class="text-primary fst-italic"> {{ $errors->first('direccion') }} </p>
             </div>
@@ -32,7 +32,7 @@
            
 
                     <div class="mb-3">
-                        <label for="text" class="form-label">País</label>
+                        <label for="text" class="form-label">País de origen:</label>
                         <select class="form-select" name="pais" aria-label="Default select example">
                             <option selected>{{$consulta->pais}}</option>
                                 <option value="México">México</option>
@@ -48,7 +48,7 @@
                     </div>
 
             <div class="mb-3">
-                <label class="form-label">Contacto: </label>
+                <label class="form-label">Nombre del Contacto:</label>
                 <input type="text" class="form-control" name="contacto" value="{{$consulta->contacto}}">
                 <p class="text-primary fst-italic"> {{ $errors->first('contacto') }}</p>
             </div>
@@ -67,7 +67,7 @@
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Numero celular: </label>
+                <label class="form-label">Correo Electronico: </label>
                 <input type="email" class="form-control" name="correo" value="{{$consulta->correo}}">
                 <p class="text-primary fst-italic"> {{ $errors->first('correo') }} </p>
             </div>
