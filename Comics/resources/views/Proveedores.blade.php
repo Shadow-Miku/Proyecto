@@ -28,13 +28,13 @@
                     <!--Errores individuales y guardar los datos escritos-->
 
                     <div class="mb-3">
-                        <label class="form-label">Empresa</label>
+                        <label class="form-label">Nombre de la Empresa:</label>
                         <input type="text" class="form-control"  name="empresa" value="{{old('empresa')}}">
                         <p class="text-primary fst-italic"> {{ $errors->first('empresa') }} </p>
                     </div>
                     
                     <div class="mb-3">
-                        <label class="form-label">Dirección</label>
+                        <label class="form-label">Dirección de la Empresa:</label>
                         <input type="text" class="form-control"  name="direccion" value="{{old('direccion')}}">
                         <p class="text-primary fst-italic"> {{ $errors->first('direccion') }}</p>
                     </div>
@@ -57,14 +57,14 @@
                     </div>-->
 
                     <div class="mb-3">
-                        <label for="text" class="form-label">País</label>
+                        <label for="text" class="form-label">País de origen:</label>
                         <select class="form-select" name="pais" aria-label="Default select example">
                             <option disabled selected> Selecciona un país...</option>
                                 <option value="México">México</option>
                                 <option value="Estados Unidos">Estados Unidos</option>
                                 <option value="Canadá">Canadá</option>
                                 <option value="España">España</option>
-                                <option value="Reino Unido">Reini Unido</option>
+                                <option value="Reino Unido">Reino Unido</option>
                                 <option value="Japón">Japón</option>
                                 <option value="Brasil">Brasil</option>
                         </select>
@@ -76,25 +76,25 @@
                     
 
                     <div class="mb-3">
-                        <label class="form-label">Contacto</label>
+                        <label class="form-label">Nombre del Contacto:</label>
                         <input type="text" class="form-control"  name="contacto" value="{{old('contacto')}}">
                         <p class="text-primary fst-italic"> {{ $errors->first('contacto') }} </p>
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">No Fijo</label>
+                        <label class="form-label">No Fijo:</label>
                         <input type="numeric" class="form-control"  name="noFijo" value="{{old('noFijo')}}">
                         <p class="text-primary fst-italic"> {{ $errors->first('noFijo') }} </p>
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">No Celular</label>
+                        <label class="form-label">No Celular:</label>
                         <input type="numeric" class="form-control"  name="noCelular" value="{{old('noCelular')}}">
                         <p class="text-primary fst-italic"> {{ $errors->first('noCelular') }} </p>
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Correo</label>
+                        <label class="form-label">Correo Electronico:</label>
                         <input type="email" class="form-control"  name="correo" value="{{old('correo')}}">
                         <p class="text-primary fst-italic"> {{ $errors->first('correo') }} </p>
                     </div>
