@@ -12,15 +12,22 @@
       <form method="POST" action="{{route('comic.destroy',$consulta->idComic)}}">
               @csrf
               @method('delete')
-              
-              {{$consulta->nombre}}
-                    {{$consulta->edicion}}
-                      {{$consulta->compania}}
-                      {{$consulta->cantidadComics}}
-                      {{$consulta->precioCompraCo}}
-                      {{$consulta->precioVentaCo}}
-                      {{$consulta->proveedor_Id}}
-                      {{$consulta->fechaIngreso}}
+              <label>Nombre del Comic:</label>
+              {{$consulta->nombre}}<br>
+              <label>Numero de edicion:</label>
+                    {{$consulta->edicion}}<br>
+                    <label>Compañia:</label>
+                      {{$consulta->compania}}<br>
+                      <label>Cantidad de cantidadComics:</label>
+                      {{$consulta->cantidadComics}}<br>
+                      <label>Precio de Compra:</label>
+                      {{$consulta->precioCompraCo}}<br>
+                      <label>Precio de Venta:</label>
+                      {{$consulta->precioVentaCo}}<br>
+                      <label>Id del Proveedor:</label>
+                      {{$consulta->proveedor_Id}}<br>
+                      <label>Fecha de ingreso:</label>
+                      {{$consulta->fechaIngreso}}<br>
                 
       </div>
 

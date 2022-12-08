@@ -52,6 +52,7 @@
               </tbody> 
     @endforeach
         </table>
+        <a href="{{route('pedido.index')}}">Ir a consulta de Pedidos</a>
         </div>
     </div>
     

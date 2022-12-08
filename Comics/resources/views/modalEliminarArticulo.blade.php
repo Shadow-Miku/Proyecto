@@ -12,15 +12,22 @@
       <form method="POST" action="{{route('articulo.destroy',$consulta->idArticulo)}}">
               @csrf
               @method('delete')
-              
-              {{$consulta->tipo}}
-              {{$consulta->marca}}
-              {{$consulta->descripcion}}
-              {{$consulta->cantidadArticulos}}
-              {{$consulta->precioCompraAr}}
-              {{$consulta->precioVentaAr}}
-              {{$consulta->proveedor_Id}}
-              {{$consulta->fechaIngreso}}  
+              <label>Tipo de articulo:</label>
+              {{$consulta->tipo}}<br>
+              <label>Marca:</label>
+              {{$consulta->marca}}<br>
+              <label>Descripcion del objeto:</label>
+              {{$consulta->descripcion}}<br>
+              <label>Cantidad de articulos:</label>
+              {{$consulta->cantidadArticulos}}<br>
+              <label>Precio de compra:</label>
+              {{$consulta->precioCompraAr}}<br>
+              <label>Precio de venta:</label>
+              {{$consulta->precioVentaAr}}<br>
+              <label>Id de identificacion del proveedor:</label>
+              {{$consulta->proveedor_Id}}<br>
+              <label>Fecha de ingreso:</label>
+              {{$consulta->fechaIngreso}}<br>  
                 
       </div>
 
