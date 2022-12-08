@@ -21,6 +21,7 @@
                             <th scope="col">Descripcion del pedido</th>
                             <th scope="col">Cantidad</th>
                             <th scope="col">Fecha_Pedido</th>
+                            <th scope="col">Imprimir</th>
                         </tr>
                     </thead>
                         
@@ -31,6 +32,10 @@
                             <td>{{$consulta->descripcion}}</td>
                             <td>{{$consulta->cantidadPedido}}</td>
                             <td>{{$consulta->fechaPedido}}</td>
+                            <td>   
+                                <button class="btn btn-success"  onclick="location.href='#'">
+                                  <i class="bi bi-plus"></i>  Descargar PDF
+                                </td> 
                         </tr>
                     </tbody>
                     @endforeach

@@ -51,6 +51,13 @@ class controladorbdPedido extends Controller
         return redirect('ConPedidos')->with('confirmacion','abc');
     }
 
+    public function imprimir()
+    {
+        $ConsultaPedidos= DB::table('tb_pedidos')->get();
+        return view('conPedidos',compact('ConsultaPedidos'));
+      
+    }
+
     /**
      * Display the specified resource.
      *
