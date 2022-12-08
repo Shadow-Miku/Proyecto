@@ -12,13 +12,19 @@
       <form method="POST" action="{{route('proveedor.destroy',$consulta->idProveedor)}}">
               @csrf
               @method('delete')
-              
-            {{$consulta->empresa}}
-            {{$consulta->direccion}}
-            {{$consulta->pais}}
-            {{$consulta->contacto}}
-            {{$consulta->noFijo}}
-            {{$consulta->noCel}}
+              <label>Empresa del proveedor:</label>
+            {{$consulta->empresa}}<br>
+            <label>Dirección del proveedor:</label>
+            {{$consulta->direccion}}<br>
+            <label>Pais del proveedor:</label>
+            {{$consulta->pais}}<br>
+            <label>Nombre del contacto proveedor:</label>
+            {{$consulta->contacto}}<br>
+            <label>Número fijo del proveedor:</label>
+            {{$consulta->noFijo}}<br>
+            <label>Celular del proveedor:</label>
+            {{$consulta->noCel}}<br>
+            <label>Correo del proveedor:</label>
             {{$consulta->correo}}
                 
       </div>

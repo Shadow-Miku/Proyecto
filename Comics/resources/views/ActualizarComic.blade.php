@@ -23,32 +23,32 @@
                     <!--Errores individuales y guardar los datos escritos-->
                         
             <div class="mb-3">
-              <label class="form-label">Nombre </label>
+              <label class="form-label">Nombre del comic: </label>
               <input type="text" class="form-control" name="nombre" value="{{$consultaId->nombre}}">
               <p class="text-primary fst-italic"> {{ $errors->first('nombre') }}</p>
           </div>
 
           <div class="mb-3">
-              <label class="form-label">Edición </label>
+              <label class="form-label">N° Edición </label>
               <input type="text" class="form-control" name="edicion" value="{{$consultaId->edicion}}">
               <p class="text-primary fst-italic"> {{ $errors->first('edicicion') }} </p>
           </div>
 
           <div class="mb-3">
-              <label class="form-label">Compañia </label>
+              <label class="form-label">Compañia: </label>
               <input type="text" class="form-control" name="compania" value="{{$consultaId->compania}}">
               <p class="text-primary fst-italic"> {{ $errors->first('compania') }} </p>
           </div>
 
           <div class="mb-3">
-              <label class="form-label">Cantidad de comics </label>
+              <label class="form-label">Cantidad de comics: </label>
               <input type="number" min="0" class="form-control" name="cantidadComics" value="{{$consultaId->cantidadComics}}">
               <p class="text-primary fst-italic"> {{ $errors->first('cantidadComics') }}</p>
           </div>
 
 
           <div class="mb-3">
-              <label class="form-label">Precio Compra </label>
+              <label class="form-label">Precio de Compra: </label>
               <input type="numeric" class="form-control" name="precioCompraCm" value="{{$consultaId->precioCompraCo}}">
               <p class="text-primary fst-italic"> {{ $errors->first('precioCompraCm') }}</p>
           </div>
@@ -56,7 +56,7 @@
           
 
           <div class="mb-3">
-            <label for="text" class="form-label">Proveedor </label>
+            <label for="text" class="form-label">Nombre de Proveedor: </label>
               <select class="form-select" name="txtProveedor" aria-label="Default select example">
                 <option selected> Selecciona un proveedor...</option>
               
@@ -70,7 +70,7 @@
           </div>
              
           <div class="mb-3">
-            <label class="form-label">Fecha ingreso</label>
+            <label class="form-label">Fecha de ingreso: </label>
             <input type="datetime-local" id="datetime" class="form-control" name="fechaIngresoCm" value="{{old('fechaIngresoCm')}}">
             <p class="text-primary fst-italic"> {{ $errors->first('fechaIngresoCm') }} </p>
           </div>

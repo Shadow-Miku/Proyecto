@@ -22,37 +22,37 @@
 
                     <!--Errores individuales y guardar los datos escritos-->
                     <div class="mb-3">
-                      <label class="form-label">Tipo</label>
+                      <label class="form-label">Tipo de articulo:</label>
                       <input type="text" class="form-control" name="tipo" value="{{$consultaId->tipo}}">
                       <p class="text-primary fst-italic"> {{ $errors->first('tipo') }} </p>
                   </div>
                   
                   <div class="mb-3">
-                      <label class="form-label">Marca</label>
+                      <label class="form-label">Marca del articulo:</label>
                       <input type="text" class="form-control" name="marca" value="{{$consultaId->marca}}">
                       <p class="text-primary fst-italic"> {{ $errors->first('marca') }}</p>
                   </div>
 
                   <div class="mb-3">
-                      <label class="form-label">Descripción</label>
+                      <label class="form-label">Descripción del objeto:</label>
                       <input type="text" class="form-control" name="descripcion" value="{{$consultaId->descripcion}}">
                       <p class="text-primary fst-italic"> {{ $errors->first('descripcion') }} </p>
                   </div>
 
                   <div class="mb-3">
-                      <label class="form-label">Cantidad de Articulos</label>
+                      <label class="form-label">Cantidad de Articulos:</label>
                       <input type="number" min="0" class="form-control" name="cantidadArticulos" value="{{$consultaId->cantidadArticulos}}">
                       <p class="text-primary fst-italic"> {{ $errors->first('cantidadArticulos') }} </p>
                   </div>
 
                   <div class="mb-3">
-                      <label class="form-label">Precio compra Articulo</label>
+                      <label class="form-label">Precio de compra del Articulo:</label>
                       <input type="numeric" class="form-control" name="precioCompraAr" value="{{$consultaId->precioCompraAr}}">
                       <p class="text-primary fst-italic"> {{ $errors->first('precioCompraAr') }} </p>
                   </div>
 
                   <div class="mb-3">
-                  <label for="text" class="form-label">Proveedor </label>
+                  <label for="text" class="form-label">Nombre del Proveedor:</label>
                       <select class="form-select" name="txtProveedor" aria-label="Default select example">
                           <option selected> selecciona un proveedor...</option>
                           @foreach ($proveedores as $tb_proveedores)
@@ -64,7 +64,7 @@
                   </div>
 
                   <div class="mb-3">
-                      <label class="form-label">Fecha ingreso</label>
+                      <label class="form-label">Fecha de ingreso:</label>
                       <input type="datetime-local" id="datetime" class="form-control" name="fechaIngresoAr" value="{{old('fechaIngresoAr')}}">
                       <p class="text-primary fst-italic"> {{ $errors->first('fechaIngresoAr') }} </p>
                   </div>
