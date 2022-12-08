@@ -54,6 +54,7 @@
                           <th scope="col">Fecha de ingreso</th>
                           <th scope="col">Modificar</th>
                           <th scope="col">Eliminar</th>
+                          <th scope="col">Vender</th>
                       </tr>
                     </thead>
 
@@ -69,11 +70,14 @@
                             <td>{{$consulta->precioVentaCo}}</td> 
                             <td>{{$consulta->proveedor_Id}}</td>
                             <td>{{$consulta->fechaIngreso}}</td>          
-                            <td><button class="btn btn-primary" onclick="location.href='{{route('comic.edit',$consulta->idComic)}}'">
+                            <td><button class="btn btn-warning" onclick="location.href='{{route('comic.edit',$consulta->idComic)}}'">
                             <i class="bi bi-pen"></i> Actualizar datos del comic
                             </button></td>
                             <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalEliminarComic{{$consulta->idComic}}">
                             <i class="bi bi-trash2"></i>  Dar de baja el comic
+                            </button></td>
+                            <td><button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalEliminarComic{{$consulta->idComic}}">
+                            <i class="bi bi-cart-plus"></i>  Vender el comic
                             </button></td>
                       </tr>
                     </tbody> 

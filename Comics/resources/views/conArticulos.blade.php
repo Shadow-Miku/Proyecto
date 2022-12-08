@@ -53,7 +53,8 @@
                   <th scope="col">Proveedor</th>
                   <th scope="col">Fecha de ingreso</th>
                   <th scope="col">Modificar</th>
-                  <th scope="col">Eliminar</th>
+                  <th scope="col">Eliminar</th>´
+                  <th scope="col">Vender</th>
                 </tr>
               </thead>
               <tbody>
@@ -68,11 +69,14 @@
                     <td>{{$consulta->precioVentaAr}}</td>
                     <td>{{$consulta->proveedor_Id}}</td>
                     <td>{{$consulta->fechaIngreso}}</td>          
-                    <td><button class="btn btn-primary" onclick="location.href='{{route('articulo.edit',$consulta->idArticulo)}}'">
+                    <td><button class="btn btn-warning" onclick="location.href='{{route('articulo.edit',$consulta->idArticulo)}}'">
                     <i class="bi bi-pen"></i> Actualizar datos del articulo
                     </button></td>
                     <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalEliminarArticulo{{$consulta->idArticulo}}">
                     <i class="bi bi-trash2"></i>  Dar de baja el articulo
+                    </button></td>
+                    <td><button type="button" class="btn btn-outline-success" >
+                    <i class="bi bi-cart-plus"></i>  Vender articulo
                     </button></td>
                 </tr>
               </tbody> 
