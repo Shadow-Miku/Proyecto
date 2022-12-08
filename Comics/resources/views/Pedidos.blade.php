@@ -23,17 +23,11 @@
             <div class="card-body">
 
                 <form class="m-4" method="POST" action="{{route('pedido.store')}}">
-                    @csrf
-                        <div class="mb-3">
-                            <label class="form-label">Id del proveedor: </label>
-                            <input type="text" class="form-control" name="txtproveedor" value="{{$consultaPedido->proveedor_Id}}">
-                            <p class="text-primary fst-italic"> {{ $errors->first('txtproveedor') }}</p>
-                        </div>
-                    
+                    @csrf                 
                         <div class="mb-3">
                             <label class="form-label">Descripcion del pedido: </label>
                             <input type="text" class="form-control" name="nombre" value="{{$consultaPedido->nombre}}">
-                            <p class="text-primary fst-italic"> {{ $errors->first('nombre') }}</p>
+                            <p class="text-primary fst-italic"> {{ $errors->first('txtarticulo') }}</p>
                         </div>
 
                         <div class="mb-3">
