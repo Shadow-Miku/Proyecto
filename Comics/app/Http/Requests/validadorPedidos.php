@@ -25,7 +25,7 @@ class validadorPedidos extends FormRequest
     {
         return [
             'txtproveedor'=>'required',
-            'txtarticulo'=>'required',
+            'nombre'=>'required',
             'txtCantidad'=>'numeric|required|max:50',
             'fechaPedido'=>'required'
         ];

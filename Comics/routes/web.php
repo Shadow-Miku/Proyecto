@@ -139,7 +139,8 @@ Route::get('pedido/create', [controladorbdPedido::class,'create'])->name('pedido
 
 /*Store */
 Route::post('pedido', [controladorbdPedido::class,'store'])->name('pedido.store');
-
+/*Index de pedido */
+Route::get('ConPedidos', [controladorBDPedido::class,'index'])->name('pedido.index');
 /*Index 
 Route::get('articulo', [controladorBDArticulos::class,'index'])->name('articulo.index');*/
 
